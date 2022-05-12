@@ -27,12 +27,12 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 function App() {
   return (
     <div>
-      <Navbar />
       <Routes>
         <Route
           path="/"
           element={
             <PrivateRoute>
+              <Navbar />
               <HomePage />
             </PrivateRoute>
           }
