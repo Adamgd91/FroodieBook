@@ -2,9 +2,10 @@
 
 import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import FoodGeneratorPage from "./pages/FoodGeneratorPage/FoodGeneratorPage";
 import Footer from "./components/Footer/Footer";
 import FriendsPage from "./pages/FriendsPage/FriendsPage";
@@ -17,8 +18,6 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 // import PrivateRoute from "./utils/PrivateRoute";
 
-
-
 // Pages Imports
 
 // Pages Imports
@@ -30,10 +29,13 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 function App() {
   return (
     <div>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Navbar />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/homepage" element={<HomePage />} /> */}
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </div>
