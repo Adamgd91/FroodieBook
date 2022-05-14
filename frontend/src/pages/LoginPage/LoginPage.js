@@ -1,4 +1,4 @@
-import "./LoginPage.css";
+import "./LoginPage.scss";
 
 import React, { useContext, useEffect } from "react";
 
@@ -21,32 +21,37 @@ const LoginPage = () => {
   }, [isServerError]);
 
   return (
-    <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <label>
-          Email:{" "}
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="text"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </label>
-        {isServerError ? (
-          <p className="error">Login failed, incorrect credentials!</p>
-        ) : null}
-        <Link to="/register">Click to register!</Link>
-        <button>Login!</button>
-      </form>
+    <div>
+      <header className="logo">
+        <h1>Froodie Book</h1>
+      </header>
+      <div className="login-container">
+        <form className="form" onSubmit={handleSubmit}>
+          <label style={{ fontWeight: "bold" }}>
+            Email:{" "}
+            <input
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label style={{ fontWeight: "bold" }}>
+            Password:{" "}
+            <input
+              type="text"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+            />
+          </label>
+          {isServerError ? (
+            <p className="error">Login failed, incorrect credentials!</p>
+          ) : null}
+          <Link to="/register">Click to register!</Link>
+          <button>Login!</button>
+        </form>
+      </div>
     </div>
   );
 };
