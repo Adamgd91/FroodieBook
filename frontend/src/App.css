@@ -12,3 +12,11 @@ html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+/* 
+.container {
+  width: "50%";
+  margin: "auto" !important;
+  display: "flex";
+  justify-content: "center";
+  border: "1px solid black";
+} */

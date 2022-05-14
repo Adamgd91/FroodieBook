@@ -10,7 +10,7 @@
   color: red;
 }
 
-button {
+.login-button {
   background-color: transparent;
   border: 2px solid $secondaryColor;
   border-radius: 12px;
@@ -21,7 +21,7 @@ button {
   padding: 0.5rem 0.5rem;
 }
 
-button:hover {
+.login-button:hover {
   cursor: pointer;
   color: white;
   background-color: $secondaryColor;

@@ -1,0 +1,59 @@
+@import "../../sass/variables";
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+li {
+  font-size: 1.25rem;
+}
+
+.navBar {
+  box-shadow: 4px 2px 5px gray;
+  color: black;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  .brand {
+    flex-grow: 1;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  .logout-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    // border: 1px solid black;
+    .logoutbuttons {
+      justify-content: "center";
+      background: transparent;
+      border: 2px solid $primaryColor;
+      color: black;
+      padding: 0.4rem 0.5rem;
+      border-radius: 12px;
+      .logoutbuttons:hover {
+        background: red;
+        color: steelblue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// .navBar button {
+//   background: transparent;
+//   border: 2px solid $primaryColor;
+//   color: black;
+//   padding: 0.4rem 0.5rem;
+//   border-radius: 12px;
+// }
+
+// .navBar button:hover {
+//   background: white;
+//   color: steelblue;
+//   cursor: pointer;
+// }
