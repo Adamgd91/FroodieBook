@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import AuthContext from "../../context/AuthContext";
 import HomePage from "../../pages/HomePage/HomePage";
+import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 import React from "react";
 import { useContext } from "react";
 
@@ -32,8 +33,13 @@ const Navbar = () => {
         }}
       >
         <li style={{ border: "1px solid black" }}>
-          <Link to="/homepage">
-            <p>asd</p>
+          <Link to="/">
+            <p>Home / Feed</p>
+          </Link>
+        </li>
+        <li style={{ border: "1px solid black" }}>
+          <Link to="/profilepage">
+            <p>Profile Page</p>
           </Link>
         </li>
       </ul>
