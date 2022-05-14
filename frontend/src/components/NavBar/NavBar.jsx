@@ -46,7 +46,7 @@ const Navbar = () => {
       <div className="logout-container">
         {" "}
         {user ? (
-          <button className="logoutbuttons" onClick={logoutUser}>
+          <button className="logoutbuttons" onClick={() => navigate("/login")}>
             Logout
           </button>
         ) : (

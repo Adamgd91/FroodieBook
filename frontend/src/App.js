@@ -1,8 +1,6 @@
-// General Imports
-
 import "./App.css";
 
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
@@ -14,20 +12,6 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import MyRecipePage from "./pages/MyRecipesPage/MyRecipesPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-
-// import Footer from "./components/Footer/Footer";
-
-// import Navbar from "./components/NavBar/NavBar";
-
-// import PrivateRoute from "./utils/PrivateRoute";
-
-// Pages Imports
-
-// Pages Imports
-
-// Component Imports
-
-// Util Imports
 
 function App() {
   return (
