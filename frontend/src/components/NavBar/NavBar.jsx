@@ -24,7 +24,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <h2 style={{ border: "1px solid black", flexGrow: "2" }}>aedfew</h2>
+
       <ul
         style={{
           border: "1px solid black",
@@ -43,6 +43,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <h2 style={{ border: "1px solid black", flexGrow: "2" }}>aedfew</h2>
       <div className="logout-container">
         {" "}
         {user ? (
