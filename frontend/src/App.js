@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 
 import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import FoodGeneratorPage from "./pages/FoodGeneratorPage/FoodGeneratorPage";
 import FriendsPage from "./pages/FriendsPage/FriendsPage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/profilepage" element={<ProfilePage />} />
           <Route path="/myrecipepage" element={<MyRecipePage />} />
+          <Route path="/favoritespage" element={<FavoritesPage />} />
           <Route path="/foodgeneratorpage" element={<FoodGeneratorPage />} />
           <Route path="/friendspage" element={<FriendsPage />} />
           <Route path="/addrecipepage" element={<AddRecipePage />} />
