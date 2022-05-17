@@ -12,21 +12,56 @@
 
 .nav-links {
   text-decoration: none;
-  color: black;
+  color: $secondaryColor;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.test {
-  border: 1px black solid;
-}
 .navBar {
-  box-shadow: 2px 2px 5px $secondaryColor;
-  border-right: 2px solid $primaryColor;
+  box-shadow: 1px 1px 20px $secondaryColor;
+  border-right: 4px solid $primaryColor;
   color: black;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   display: grid;
   grid-template-rows: 2fr 3fr 3fr auto;
   position: fixed;
   height: 100vh;
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $primaryColor 2px solid;
+    margin-bottom: 1em;
+    border-radius: 8px;
+  }
+
+  .user-container {
+    display: flex;
+    padding-left: 2em;
+    border-radius: 12px;
+    box-shadow: 0px 10px 10px rgba(167, 166, 166, 0.1);
+    p:hover {
+      border-bottom: $primaryColor 2px solid;
+      border-radius: 4px;
+    }
+    .nav-links:focus {
+      color: black;
+      border-radius: 12px;
+    }
+  }
+  .friends-container {
+    display: flex;
+    padding-left: 2em;
+    border-radius: 12px;
+    box-shadow: 0 10px 10px rgba(167, 166, 166, 0.1);
+    p:hover {
+      border-bottom: $primaryColor 2px solid;
+      border-radius: 4px;
+    }
+  }
+
   .logo-navbar {
     text-decoration: none;
     list-style-type: none;

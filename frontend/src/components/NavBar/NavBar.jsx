@@ -21,6 +21,8 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+        <section>Add Image</section>
+        <section>{user.name}</section>
       </div>
       <div className="user-container test">
         <ul className="navbar-nav-links">
