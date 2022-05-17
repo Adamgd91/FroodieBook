@@ -3,7 +3,7 @@ const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 
 const userSchema = mongoose.Schema({
-  name: { type: String, required: true, minLength: 5, maxLength: 50 },
+  name: { type: String, required: true, minLength: 2, maxLength: 50 },
   email: {
     type: String,
     unique: true,
@@ -13,6 +13,12 @@ const userSchema = mongoose.Schema({
   },
   password: { type: String, required: true, minLength: 8, maxLength: 1024 },
   isAdmin: { type: Boolean, required: true },
+  aboutMe: { type: String, minLength: 4, maxLength: 1024, default: "     " },
+  friendsList: { type: Array, default: [] },
+  pendingFriends: { type: Array, default: [] },
+  friendRequests: { type: Array, default: [] },
+
+  dateAdded: { type: Date, default: Date.now() },
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -22,6 +28,11 @@ userSchema.methods.generateAuthToken = function () {
       name: this.name,
       email: this.email,
       isAdmin: this.isAdmin,
+      aboutMe: this.aboutMe,
+      friendsList: this.friendsList,
+      pendingFriends: this.pendingFriends,
+      friendRequests: this.friendRequests,
+      dateAdded: this.dateAdded,
     },
     process.env.JWT_SECRET
   );
@@ -29,7 +40,7 @@ userSchema.methods.generateAuthToken = function () {
 
 const validateUser = (user) => {
   const schema = Joi.object({
-    name: Joi.string().min(5).max(50).required(),
+    name: Joi.string().min(2).max(50).required(),
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(1024).required(),
     isAdmin: Joi.bool().required(),
