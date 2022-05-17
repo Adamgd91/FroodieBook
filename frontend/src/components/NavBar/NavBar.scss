@@ -1,28 +1,42 @@
 @import "../../sass/variables";
 
-ul {
+.navbar-nav-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-direction: column;
   list-style-type: none;
+  li {
+    font-size: 1rem;
+  }
 }
 
-li {
-  font-size: 1.25rem;
+.nav-links {
+  text-decoration: none;
+  color: black;
 }
 
+.test {
+  border: 1px black solid;
+}
 .navBar {
-  box-shadow: 4px 2px 5px gray;
+  box-shadow: 2px 2px 5px $secondaryColor;
+  border-right: 2px solid $primaryColor;
   color: black;
   padding: 1.5rem 2rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 2fr 3fr 3fr auto;
   position: fixed;
   height: 100vh;
-  .brand {
-    flex-grow: 1;
-    cursor: pointer;
+  .logo-navbar {
+    text-decoration: none;
+    list-style-type: none;
+    text-transform: uppercase;
     font-size: 2rem;
+    color: $secondaryColor;
+    text-shadow: -1px -1px 0 $primaryColor, 1px -1px 0 $primaryColor,
+      -1px 1px 0 $primaryColor, 1px 1px 0 $primaryColor;
   }
+
   .logout-container {
     display: flex;
     justify-content: center;
@@ -35,25 +49,12 @@ li {
       color: black;
       padding: 0.4rem 0.5rem;
       border-radius: 12px;
-      .logoutbuttons:hover {
-        background: red;
-        color: steelblue;
-        cursor: pointer;
-      }
+    }
+    .logoutbuttons:hover {
+      background: $primaryColor;
+      color: white;
+      cursor: pointer;
+      border-radius: 12px;
     }
   }
 }
-
-// .navBar button {
-//   background: transparent;
-//   border: 2px solid $primaryColor;
-//   color: black;
-//   padding: 0.4rem 0.5rem;
-//   border-radius: 12px;
-// }
-
-// .navBar button:hover {
-//   background: white;
-//   color: steelblue;
-//   cursor: pointer;
-// }
