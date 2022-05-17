@@ -17,7 +17,10 @@ const HomePage = () => {
         border: "1px solid black",
       }}
     >
-      <h1>Home Page for {user.name}!</h1>;
+      <h1>
+        A PLACE WHERE YOU <br />
+        AND YOUR FRIENDS CAN SHARE <br /> AND COLLABORATE FOOD RECIPES & IDEAS!
+      </h1>
     </div>
   );
 };
