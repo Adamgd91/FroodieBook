@@ -18,7 +18,7 @@
 }
 
 .navBar {
-  box-shadow: 1px 1px 20px $secondaryColor;
+  box-shadow: 1px 1px 5px $secondaryColor;
   border-right: 4px solid $primaryColor;
   color: black;
   padding: 1rem 2rem;
@@ -45,6 +45,8 @@
     p:hover {
       border-bottom: $primaryColor 2px solid;
       border-radius: 4px;
+      width: fit-content;
+      padding: 0 0.5em 0 0.5em;
     }
     .nav-links:focus {
       color: black;
@@ -59,6 +61,8 @@
     p:hover {
       border-bottom: $primaryColor 2px solid;
       border-radius: 4px;
+      width: fit-content;
+      padding: 0 1em 0 1em;
     }
   }
 
