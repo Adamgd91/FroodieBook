@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/profilepage" element={<ProfilePage />} />
-          <Route path="/myrecipepage" element={<MyRecipePage />} />
+          <Route path="/myrecipespage" element={<MyRecipePage />} />
           <Route path="/favoritespage" element={<FavoritesPage />} />
           <Route path="/foodgeneratorpage" element={<FoodGeneratorPage />} />
           <Route path="/friendspage" element={<FriendsPage />} />

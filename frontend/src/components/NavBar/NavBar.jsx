@@ -13,7 +13,85 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="navBar">
-      <ul style={{ border: "1px solid black", flexGrow: "1" }}>
+      <div className="header-container test">
+        <ul className="logo-navbar">
+          <li>
+            <Link to="/" className="nav-links">
+              Froodie Book
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="user-container test">
+        <ul className="navbar-nav-links">
+          <li>
+            <Link to="/" className="nav-links">
+              <p>Home / Feed</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/myrecipespage" className="nav-links">
+              <p>My Recipes</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/favoritespage" className="nav-links">
+              <p>Favorites</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/profilepage" className="nav-links">
+              <p>Profile</p>
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="friends-container test">
+        {" "}
+        <ul className="navbar-nav-links">
+          <li>
+            <Link to="/friendspage" className="nav-links">
+              <p>Friends</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/friendspage" className="nav-links">
+              <p>Pending Friends</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/friendspage" className="nav-links">
+              <p>Friends Request</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/foodgeneratorpage" className="nav-links">
+              <p>Food Generator</p>
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      <div className="logout-container test">
+        {" "}
+        {user ? (
+          <button className="logoutbuttons" onClick={() => navigate("/login")}>
+            Logout
+          </button>
+        ) : (
+          <button className="logoutbutton" onClick={() => navigate("/login")}>
+            Login
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
+
+{
+  /* <ul style={{ border: "1px solid black", flexGrow: "1" }}>
         <li>
           <Link
             className="brand"
@@ -82,22 +160,5 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-      </div>
-      {/* <h2 style={{ border: "1px solid black", flexGrow: "2" }}>aedfew</h2> */}
-      <div className="logout-container">
-        {" "}
-        {user ? (
-          <button className="logoutbuttons" onClick={() => navigate("/login")}>
-            Logout
-          </button>
-        ) : (
-          <button className="logoutbuttons" onClick={() => navigate("/login")}>
-            Login
-          </button>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default Navbar;
+        </div>*/
+}
