@@ -6,11 +6,14 @@ import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import FoodGeneratorPage from "./pages/FoodGeneratorPage/FoodGeneratorPage";
+import Footer from "./components/Footer/Footer";
 import FriendsPage from "./pages/FriendsPage/FriendsPage";
 import HomePage from "./pages/HomePage/HomePage";
 import Layout from "./Layout";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyRecipePage from "./pages/MyRecipesPage/MyRecipesPage";
+import Navbar from "./components/NavBar/NavBar";
+import PrivateRoute from "./utils/PrivateRoute";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
@@ -36,3 +39,25 @@ function App() {
 }
 
 export default App;
+{
+  /* <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <HomePage />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/profilepage" element={<ProfilePage />} />
+        <Route path="/myrecipespage" element={<MyRecipePage />} />
+        <Route path="/favoritespage" element={<FavoritesPage />} />
+        <Route path="/foodgeneratorpage" element={<FoodGeneratorPage />} />
+        <Route path="/friendsPage" element={<FriendsPage />} />
+        <Route path="/addrecipepage" element={<AddRecipePage />} />
+      </Routes>
+      <Footer /> */
+}

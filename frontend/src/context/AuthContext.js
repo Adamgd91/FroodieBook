@@ -1,18 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 
-import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-
-// import AxiosOnlineStatus from "../Routes/status";
 
 const AuthContext = createContext();
 
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
-  const BASE_URL = "http://localhost:3001/api/users";
+  const BASE_URL = "http://localhost:3007/api/users";
   const decodedUser = localStorage.getItem("token");
   const decodedToken = decodedUser ? jwtDecode(decodedUser) : null;
   const [user, setUser] = useState(() => decodedToken);
@@ -65,10 +62,18 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const logoutUser = async () => {
+    navigate("/");
+    localStorage.removeItem("token");
+    console.log("token removed");
+    setUser(null);
+    setFile(null);
+  };
+
   const contextData = {
     user,
     loginUser,
-
+    logoutUser,
     registerUser,
     isServerError,
     file,
