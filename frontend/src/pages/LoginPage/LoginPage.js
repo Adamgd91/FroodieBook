@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from "react";
 
 import AuthContext from "../../context/AuthContext";
 import { Link } from "react-router-dom";
+import foodimg from "../../imgs/food.jpg";
 import useCustomForm from "../../hooks/useCustomForm";
 
 const LoginPage = () => {
@@ -22,6 +23,7 @@ const LoginPage = () => {
 
   return (
     <div>
+      <img src={foodimg} alt="food-background" className="food-image" />
       <header className="logo">
         <h1>Froodie Book</h1>
       </header>
