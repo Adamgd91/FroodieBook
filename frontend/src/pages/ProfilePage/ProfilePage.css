@@ -36,16 +36,6 @@
   align-items: center;
 }
 
-.projects-form-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.coding-form-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .image-container {
   text-align: center;
