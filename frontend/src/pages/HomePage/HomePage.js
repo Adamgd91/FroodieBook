@@ -11,7 +11,8 @@ const HomePage = () => {
       style={{
         width: "50%",
         margin: "auto",
-        marginLeft: "30em",
+        // marginTop: "2em",
+        // marginLeft: "30em",
         display: "flex",
         justifyContent: "center",
         border: "1px solid black",

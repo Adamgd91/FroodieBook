@@ -10,6 +10,7 @@ const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
+    <div className="navs">
     <div className="navBar">
       <div className="header-container test">
         <ul className="logo-navbar">
@@ -84,6 +85,7 @@ const Navbar = () => {
           </button>
         )}
       </div>
+    </div>
     </div>
   );
 };
