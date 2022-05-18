@@ -9,19 +9,21 @@ const HomePage = () => {
     <div
       className="homepage-container"
       style={{
-        width: "50%",
-        margin: "auto",
-        // marginTop: "2em",
-        // marginLeft: "30em",
+        // width: "50%",
+        // margin: "auto",
+
         display: "flex",
         justifyContent: "center",
         border: "1px solid black",
+        left: "20rem",
+        position: "relative"
       }}
-    >
+    ><div>
       <h1>
         A PLACE WHERE YOU <br />
         AND YOUR FRIENDS CAN SHARE <br /> AND COLLABORATE FOOD RECIPES & IDEAS!
       </h1>
+      </div>
     </div>
   );
 };
