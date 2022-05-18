@@ -24,8 +24,13 @@
   padding: 1rem 2rem;
   display: grid;
   grid-template-rows: 2fr 3fr 3fr auto;
-  position: fixed;
+  width: 20em;
+  float: left;
+  //   position: static;
+  left: 0;
+  top: 0;
   height: 100vh;
+  margin-right: 2em;
 
   .header-container {
     display: flex;

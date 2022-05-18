@@ -1,33 +1,11 @@
-.profile {
-  display: grid;
-  margin-top: 2rem;
-  margin-left: 1rem;
-  margin-right: 5rem;
-}
-
-.profile-name {
+.profile-container {
   display: flex;
   justify-content: center;
-}
-.profile h1,
-h3 {
-  text-align: center;
-}
-
-.profile ul {
-  display: block;
-  padding: 2rem;
-}
-.profile .body {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-}
-.row {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.col {
-  margin: 1rem;
+  align-items: center;
+  width: 50%;
+  border: 1px solid black;
+  /* margin-top: 1em; */
+  /* position: absolute; */
 }
 
 .aboutme-container {
@@ -36,22 +14,9 @@ h3 {
   margin-top: 3em;
 }
 
-.projects-container {
-  border: 1px solid black;
-  border-radius: 17px;
-}
-
-.coding-container {
-  border: 1px solid black;
-  border-radius: 17px;
-}
-
 .profile-buttons,
-.projects-button,
 .aboutme-button,
-.aboutme-buttons,
-.coding-button,
-.coding-buttons {
+.aboutme-buttons {
   display: flex;
   justify-content: center;
   border: none;

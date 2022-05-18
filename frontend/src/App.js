@@ -39,25 +39,3 @@ function App() {
 }
 
 export default App;
-{
-  /* <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
-          }
-        />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/profilepage" element={<ProfilePage />} />
-        <Route path="/myrecipespage" element={<MyRecipePage />} />
-        <Route path="/favoritespage" element={<FavoritesPage />} />
-        <Route path="/foodgeneratorpage" element={<FoodGeneratorPage />} />
-        <Route path="/friendsPage" element={<FriendsPage />} />
-        <Route path="/addrecipepage" element={<AddRecipePage />} />
-      </Routes>
-      <Footer /> */
-}

@@ -10,20 +10,10 @@ const ProfilePage = (props) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div>
+    <div className="profile-container">
       <h1 className="profile-name">Profile for {user.name}</h1>
 
-      <div className="profile">
-        <Row className="body">
-          <Col></Col>
-
-          <Col>
-            <AboutMe />
-          </Col>
-
-          <Col></Col>
-        </Row>
-      </div>
+      <AboutMe />
     </div>
   );
 };
