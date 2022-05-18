@@ -16,6 +16,12 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+.navs {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+ 
+}
 
 .navBar {
   box-shadow: 1px 1px 5px $secondaryColor;
@@ -25,12 +31,10 @@
   display: grid;
   grid-template-rows: 2fr 3fr 3fr auto;
   width: 20em;
-  float: left;
-  //   position: static;
-  left: 0;
-  top: 0;
+  // float: left;
+  // left: 0;
+  // top: 0;
   height: 100vh;
-  margin-right: 2em;
 
   .header-container {
     display: flex;
@@ -39,35 +43,33 @@
     align-items: center;
     border-bottom: $primaryColor 2px solid;
     margin-bottom: 1em;
-    border-radius: 8px;
+    // border-radius: 5px;
   }
 
   .user-container {
     display: flex;
     padding-left: 2em;
-    border-radius: 12px;
-    box-shadow: 0px 10px 10px rgba(167, 166, 166, 0.1);
+    border-bottom: $primaryColor 2px solid;
     p:hover {
-      border-bottom: $primaryColor 2px solid;
-      border-radius: 4px;
+      background: $primaryColor;
+      border-radius: 12px;
       width: fit-content;
-      padding: 0 0.5em 0 0.5em;
+      padding: .5rem;
     }
+
     .nav-links:focus {
       color: black;
-      border-radius: 12px;
     }
   }
   .friends-container {
     display: flex;
     padding-left: 2em;
     border-radius: 12px;
-    box-shadow: 0 10px 10px rgba(167, 166, 166, 0.1);
     p:hover {
-      border-bottom: $primaryColor 2px solid;
-      border-radius: 4px;
+      background: $primaryColor;
+      border-radius: 12px;
       width: fit-content;
-      padding: 0 1em 0 1em;
+      padding: .5rem;
     }
   }
 
