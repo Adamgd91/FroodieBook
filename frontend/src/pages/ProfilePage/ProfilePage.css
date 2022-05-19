@@ -1,11 +1,9 @@
 .profile-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 50%;
   border: 1px solid black;
-  /* margin-top: 1em; */
-  /* position: absolute; */
+  margin-left: 20em;
+  position: relative;
 }
 
 .aboutme-container {
@@ -35,7 +33,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 .image-container {
   text-align: center;
