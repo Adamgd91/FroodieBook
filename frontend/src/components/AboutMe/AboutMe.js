@@ -1,5 +1,5 @@
-import "../../pages/ProfilePage/ProfilePage.css";
-import "./AboutMe.css";
+import "../../pages/ProfilePage/ProfilePage.scss";
+import "./AboutMe.scss";
 
 import { Button, Form, Modal } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
@@ -35,7 +35,7 @@ const AboutMe = () => {
   return (
     <div>
       <div className="aboutme-container">
-        <h3>ABOUT ME</h3>
+        <h3>ABOUT ME:</h3>
         <br />
         <p style={{ paddingLeft: "2em" }}>{aboutMe && aboutMe}</p>
         <br />
@@ -48,7 +48,7 @@ const AboutMe = () => {
       <Modal
         show={show}
         onHide={handleClose}
-        className="modal fade"
+        className="modal"
         backdrop="static"
       >
         <Modal.Header>
@@ -76,7 +76,7 @@ const AboutMe = () => {
                 <Button
                   type="btn"
                   style={{ margin: "0px 1em 1em 0px" }}
-                  className="button primary"
+                  className="form-buttons"
                   onClick={(event) => {
                     handleSubmit(event);
                   }}
@@ -87,7 +87,7 @@ const AboutMe = () => {
                   type="button"
                   style={{ marginBottom: "1em" }}
                   variant="secondary"
-                  className="close"
+                  className="form-buttons"
                   onClick={handleClose}
                 >
                   Close

@@ -1,4 +1,4 @@
-import "./ProfilePage.css";
+import "./ProfilePage.scss";
 
 import { Col, Row } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
