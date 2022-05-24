@@ -148,6 +148,21 @@ async function acceptFriendRequests(userId, obj) {
   }
 }
 
+async function updateImage(userId, formData) {
+  console.log(`${baseUrl}/updateImage/${userId}`);
+  try {
+    let response = await axios.put(
+      `${baseUrl}/updateImage/${userId}`,
+      formData
+    );
+    if (response) {
+      return response.data;
+    }
+  } catch (error) {
+    console.log("Error updating user: " + error);
+  }
+}
+
 const AxiosUsers = {
   getUser,
   updateUser,
@@ -161,5 +176,6 @@ const AxiosUsers = {
   removeFromFriendRequests,
   removeFromPendingFriends,
   removeFriend,
+  updateImage,
 };
 export default AxiosUsers;
