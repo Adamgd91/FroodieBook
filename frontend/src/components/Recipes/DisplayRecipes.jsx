@@ -4,14 +4,14 @@ import CustomButton from "./LikeButton";
 import React from "react";
 import { useState } from "react";
 
-const DisplayRecipes = ({ postList, setHidden, setSinglePost }) => {
+const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
   function handleClick() {
     setHidden(true);
   }
 
   return (
     <div className="postlist">
-      {postList
+      {recipeList
         .map((post, index) => {
           return (
             <div key={index} className="postbody">
@@ -19,15 +19,17 @@ const DisplayRecipes = ({ postList, setHidden, setSinglePost }) => {
                 className="my-post-button"
                 onClick={() => {
                   handleClick(post);
-                  setSinglePost(post);
+                  setSingleRecipe(post);
                 }}
               >
                 {" "}
                 <div className="name-container">{post.name}</div>
                 <br />
-                <p className="post">Post:</p>
+                <p className="post">Name:</p>
                 <div className="body-container">{post.body}</div>
-                <p className="post">Recipe:</p>
+                <p className="post">Description:</p>
+                <div className="body-container">{post.step}</div>
+                <p className="post">step:</p>
               </button>
 
               <CustomButton post={post} />

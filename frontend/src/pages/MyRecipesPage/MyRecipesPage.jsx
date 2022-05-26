@@ -10,12 +10,13 @@ import DisplaySinglePost from "../../components/Recipes/DisplaySingleRecipe";
 import ErrorBoundary from "../../components/ErrorBoundary";
 
 const MyRecipesPage = () => {
-  const [postList, setPostList] = useState([]);
+  const [recipeList, setRecipeList] = useState([]);
+  const [stepsList, setStepsList] = useState([]);
   const { user } = useContext(AuthContext);
   const userId = user._id || null;
   const [update, setUpdate] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [singlePost, setSinglePost] = useState();
+  const [singleRecipe, setSingleRecipe] = useState();
   const name = user.name || null;
 
   useEffect(() => {
@@ -29,27 +30,33 @@ const MyRecipesPage = () => {
   async function getPosts(userId) {
     let posts = await AxiosPosts.getPosts(userId);
     if (posts) {
-      setPostList(posts);
-    } else setPostList({ Object: "No Posts" });
+      setRecipeList(posts);
+    } else setRecipeList({ Object: "No Posts" });
   }
 
   return (
     <div className="recipe-container">
       {hidden === false && (
         <div>
-          <CreatePost userId={userId} handleClick={handleClick} name={name} />
+          <CreatePost
+            userId={userId}
+            handleClick={handleClick}
+            name={name}
+            // steps={steps}
+          />
           <ErrorBoundary>
             <DisplayPosts
-              postList={postList}
+              recipeList={recipeList}
+              stepsList={stepsList}
               setHidden={setHidden}
-              setSinglePost={setSinglePost}
+              setSingleRecipe={setSingleRecipe}
             />
           </ErrorBoundary>
         </div>
       )}
       {hidden && (
         <DisplaySinglePost
-          singlePost={singlePost}
+          singleRecipe={singleRecipe}
           setHidden={setHidden}
           handleClick={handleClick}
           userId={userId}
