@@ -8,6 +8,7 @@ const postSchema = mongoose.Schema({
   likes: { type: Array, default: [] },
   dislikes: { type: Array, default: [] },
   dateAdded: { type: Date, default: Date.now() },
+  setps: { type: String, minLength: 2, maxLength: 255 },
 });
 
 const validatePost = (post) => {
