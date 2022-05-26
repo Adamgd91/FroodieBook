@@ -36,14 +36,14 @@ const HomePage = () => {
     <div
       className="homepage-container"
       style={{
-        display: "flex",
-        justifyContent: "center",
+        display: "grid",
+        // justifyContent: "center",
         border: "1px solid black",
         marginLeft: "20em",
         position: "relative",
       }}
     >
-      <div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <h1>
           {" "}
           A PLACE WHERE YOU <br />

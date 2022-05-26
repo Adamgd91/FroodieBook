@@ -38,12 +38,6 @@ const MyRecipesPage = () => {
     <div className="recipe-container">
       {hidden === false && (
         <div>
-          <CreatePost
-            userId={userId}
-            handleClick={handleClick}
-            name={name}
-            // steps={steps}
-          />
           <ErrorBoundary>
             <DisplayPosts
               recipeList={recipeList}
