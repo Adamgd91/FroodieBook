@@ -58,7 +58,7 @@ const CreateRecipe = ({ userId, handleClick, name, steps }) => {
             <div className="recipeform-container">
               <Form.Control
                 className="recipetextArea"
-                placeholder="Enter your Description!"
+                placeholder="Enter your Recipe Name!"
                 type="textArea"
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
@@ -68,18 +68,6 @@ const CreateRecipe = ({ userId, handleClick, name, steps }) => {
                   }
                 }}
               />
-
-              {/* <label for="lang">Language</label>
-              <select name="languages" id="lang">
-                <option value="javascript">JavaScript</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-                <option value="golang">Golang</option>
-                <option value="python">Python</option>
-                <option value="c#">C#</option>
-                <option value="C++">C++</option>
-                <option value="erlang">Erlang</option>
-              </select> */}
 
               <br />
               <div className="aboutme-form-buttons">
