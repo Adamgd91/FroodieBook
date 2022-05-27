@@ -2,7 +2,6 @@
 
 .postlist {
   display: flex;
-  /* border: 1px black solid; */
   flex-direction: column;
   border-radius: 7px;
   width: 70%;
@@ -10,7 +9,6 @@
   margin: auto;
   justify-content: center;
   position: relative;
-  //   visibility: hidden;
 }
 
 .postbody {
@@ -29,7 +27,6 @@
 .my-post-button {
   background-color: transparent;
   border: none;
-  //   color: steelblue;
   font-size: 1rem;
   font-family: inherit;
   width: 100%;
@@ -42,7 +39,7 @@
 }
 
 .name-container {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   text-align: left;
   text-transform: uppercase;
 }

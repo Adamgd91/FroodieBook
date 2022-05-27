@@ -37,8 +37,6 @@ const HomePage = () => {
       className="homepage-container"
       style={{
         display: "grid",
-        // justifyContent: "center",
-        // border: "1px solid black",
         marginLeft: "20em",
         position: "relative",
       }}
@@ -59,12 +57,7 @@ const HomePage = () => {
       </div>
       {hidden === false && (
         <div>
-          <CreateRecipe
-            userId={userId}
-            handleClick={handleClick}
-            name={name}
-            // steps={steps}
-          />
+          <CreateRecipe userId={userId} handleClick={handleClick} name={name} />
           <ErrorBoundary>
             <DisplayRecipes
               recipeList={recipeList}
