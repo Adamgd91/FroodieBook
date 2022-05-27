@@ -38,12 +38,18 @@ const HomePage = () => {
       style={{
         display: "grid",
         // justifyContent: "center",
-        border: "1px solid black",
+        // border: "1px solid black",
         marginLeft: "20em",
         position: "relative",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+        }}
+      >
         <h1>
           {" "}
           A PLACE WHERE YOU <br />

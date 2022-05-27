@@ -1,4 +1,4 @@
-import "../Recipes/MyRecipes.css";
+import "../Recipes/MyRecipes.scss";
 
 import { Button, Form, Modal } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
@@ -37,15 +37,16 @@ const CreateRecipe = ({ userId, handleClick, name, steps }) => {
   return (
     <div>
       <div>
-        <Button className="aboutme-button" type="button" onClick={handleShow}>
-          Add Recipe
+        <Button className="recipe-button" type="button" onClick={handleShow}>
+          <span>+</span>
+          <p>Add Recipe</p>
         </Button>
       </div>
 
       <Modal
         show={show}
         onHide={handleClose}
-        className="modal"
+        className="recipemodal"
         backdrop="static"
       >
         <Modal.Header>
@@ -54,9 +55,9 @@ const CreateRecipe = ({ userId, handleClick, name, steps }) => {
         <Form onSubmit={handlePost}>
           <Form.Group>
             <br />
-            <div className="form-container">
+            <div className="recipeform-container">
               <Form.Control
-                className="textArea"
+                className="recipetextArea"
                 placeholder="Enter your Description!"
                 type="textArea"
                 value={value}

@@ -1,3 +1,5 @@
+@import "../../sass/variables";
+
 .postContainer {
   display: flex;
   border-radius: 7px;
@@ -22,7 +24,7 @@ textarea {
 
 .postlist {
   display: flex;
-  border: 1px black solid;
+  /* border: 1px black solid; */
   flex-direction: column;
   border-radius: 7px;
   width: 70%;
@@ -34,27 +36,28 @@ textarea {
 .postbody {
   display: flex;
   justify-content: space-between;
-  margin: 2em;
-  border-bottom: 1px solid black;
+  margin: 1em;
+  border: 2px solid black;
+  border-radius: 12px;
   align-items: center;
 }
-
+.postbody:hover {
+  box-shadow: 1px 1px 5px $secondaryColor;
+  border: 4px solid $primaryColor;
+}
 .my-post-button {
   background-color: transparent;
   border: none;
-  color: steelblue;
+  //   color: steelblue;
   font-size: 1rem;
   font-family: inherit;
-  max-width: fit-content;
+  width: 100%;
   padding: 0.5rem 0.5rem;
   margin-left: 4em;
 }
 
 .my-post-button:hover {
   cursor: pointer;
-  color: white;
-  background-color: steelblue;
-  border-radius: 12px;
 }
 
 .likeButton {
@@ -214,4 +217,62 @@ textarea {
   border: none;
   border-radius: 15px;
   margin: 20px 20px;
+}
+
+.recipe-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+  margin-left: 50em;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50%;
+  padding: 3em;
+  width: 11em;
+  border: 1px solid black;
+  background: transparent;
+  cursor: pointer;
+  span {
+    font-size: 2em;
+  }
+  p {
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+}
+
+.recipe-button:hover {
+  background: $primaryColor;
+  border: none;
+  color: $secondaryColor;
+  box-shadow: 1px 1px 5px $secondaryColor;
+}
+.recipetextArea {
+  width: 70%;
+  height: 5rem;
+  font-size: medium;
+  border-radius: 4px;
+  justify-content: center;
+}
+
+.recipeform-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+
+.recipemodal {
+  width: 30vw;
+  margin-left: 50em;
+  margin-top: 2em;
+  height: 35vh;
+  background-color: white;
+  border: 4px solid $primaryColor;
+  border-radius: 12px;
+  z-index: 50;
+  padding: 0.5em;
+  /* position: relative; */
 }
