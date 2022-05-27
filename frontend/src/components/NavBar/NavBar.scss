@@ -16,6 +16,7 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+
 .navs {
   display: flex;
   flex-direction: column;
@@ -24,14 +25,17 @@
 
 .navBar {
   box-shadow: 1px 1px 5px $secondaryColor;
-  border-right: 4px solid $primaryColor;
+  border: 4px solid $primaryColor;
+  border-radius: 12px;
   color: black;
   padding: 1rem 2rem;
   display: grid;
   grid-template-rows: 2fr 3fr 3fr auto;
   width: 20em;
-
-  height: 100vh;
+  height: 98vh;
+  margin-left: 2em;
+  margin-top: 0.5em;
+  position: fixed;
 
   .header-container {
     display: flex;
