@@ -1,4 +1,4 @@
-import "../Recipes/MyRecipes.css";
+import "../Recipes/MyRecipes.scss";
 
 import CustomButton from "./LikeButton";
 import React from "react";
@@ -32,7 +32,7 @@ const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
                 <p className="post">step:</p>
               </button>
 
-              <CustomButton post={post} />
+              {/* <CustomButton post={post} /> */}
             </div>
           );
         })

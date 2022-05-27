@@ -1,4 +1,4 @@
-import "../Recipes/MyRecipes.css";
+import "../Recipes/MyRecipes.scss";
 
 import AxiosPosts from "../../Routes/postRoutes";
 import React from "react";
