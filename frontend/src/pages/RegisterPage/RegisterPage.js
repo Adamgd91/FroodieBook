@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 import AuthContext from "../../context/AuthContext";
-import LoginPage from "../LoginPage/LoginPage";
 import useCustomForm from "../../hooks/useCustomForm";
 
 const RegisterPage = () => {
@@ -63,7 +62,7 @@ const RegisterPage = () => {
               onChange={handleInputChange}
             />
           </label>
-          <button>Register!</button>
+          <button onClick={handleSubmit}>Register!</button>
         </form>
       </div>
     </div>

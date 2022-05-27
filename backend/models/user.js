@@ -17,7 +17,6 @@ const userSchema = mongoose.Schema({
   friendsList: { type: Array, default: [] },
   pendingFriends: { type: Array, default: [] },
   friendRequests: { type: Array, default: [] },
-
   dateAdded: { type: Date, default: Date.now() },
 });
 

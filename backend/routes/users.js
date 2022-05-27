@@ -1,11 +1,10 @@
 const { User, validateLogin, validateUser } = require("../models/user");
-
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
-
 const bcrypt = require("bcrypt");
 const express = require("express");
 const router = express.Router();
+const fileUpload = require("../middleware/file-upload");
 
 //* POST register a new user
 router.post("/register", async (req, res) => {
@@ -23,6 +22,7 @@ router.post("/register", async (req, res) => {
       email: req.body.email,
       password: await bcrypt.hash(req.body.password, salt),
       isAdmin: req.body.isAdmin,
+      //   image: req.file.path,
     });
 
     await user.save();
@@ -35,6 +35,7 @@ router.post("/register", async (req, res) => {
         name: user.name,
         email: user.email,
         isAdmin: user.isAdmin,
+        // image: user.image,
       });
   } catch (ex) {
     return res.status(500).send(`Internal Server Error: ${ex}`);
@@ -90,51 +91,12 @@ router.delete("/:userId", [auth, admin], async (req, res) => {
   }
 });
 
-// Get current friends of user
-router.get("/currentFriends/:userId", async (req, res) => {
-  try {
-    const user = await User.findById(req.params.userId);
-    if (user) {
-      return res.send(user.friendsList);
-    } else {
-      return res.status(400).send("Error getting friends");
-    }
-  } catch (error) {
-    return res.status(500).send(`Internal Server Error: ${error}`);
-  }
-});
-// Get friend requests of user
-router.get("/friendRequests/:userId", async (req, res) => {
-  try {
-    const user = await User.findById(req.params.userId);
-    if (user) {
-      return res.send(user.friendRequests);
-    } else {
-      return res.status(400).send("Error getting friends");
-    }
-  } catch (error) {
-    return res.status(500).send(`Internal Server Error: ${error}`);
-  }
-});
-// Get sent friend requests of user
-router.get("/sentFriendRequests/:userId", async (req, res) => {
-  try {
-    const user = await User.findById(req.params.userId);
-    if (user) {
-      return res.send(user.pendingFriends);
-    } else {
-      return res.status(400).send("Error getting friends");
-    }
-  } catch (error) {
-    return res.status(500).send(`Internal Server Error: ${error}`);
-  }
-});
-// Get user by userId
+// Get property of user
 router.get("/:userId", async (req, res) => {
   try {
-    const user = await User.findById(req.params.userId);
-    if (user) {
-      return res.send(user);
+    const users = await User.findById(req.params.userId);
+    if (users) {
+      return res.send(users);
     } else {
       return res.status(400).send("Error getting user");
     }
@@ -157,6 +119,23 @@ router.put("/update", async (req, res) => {
     return res.status(500).send(`Internal Server Error: ${error}`);
   }
 });
+router.put(
+  "/updateImage/:userId",
+  fileUpload.single("image"),
+  async (req, res) => {
+    try {
+      const users = await User.findByIdAndUpdate(
+        { _id: req.params.userId },
+        { image: req.file.filename },
+        { new: true }
+      );
+
+      return res.status(200).send(users);
+    } catch (error) {
+      return res.status(500).send(`Internal Server Error: ${error}`);
+    }
+  }
+);
 
 // Add user to friendRequest list of a chosen user
 // http://localhost:3007/api/users/friendRequests/:userId
