@@ -1,4 +1,4 @@
-import "./Recipes.scss";
+import "../../components/Recipes/MyRecipes.scss";
 
 import React, { useContext, useEffect, useState } from "react";
 

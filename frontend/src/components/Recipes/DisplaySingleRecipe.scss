@@ -1,0 +1,12 @@
+@import "../../sass/variables";
+
+.delete-post {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 12px;
+  margin-top: 2em;
+  width: 30%;
+  padding: 2em;
+  margin: auto;
+}

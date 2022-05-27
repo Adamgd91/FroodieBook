@@ -1,4 +1,4 @@
-import "../Recipes/MyRecipes.scss";
+import "../Recipes/DisplayRecipes.scss";
 
 import CustomButton from "./LikeButton";
 import React from "react";

@@ -1,4 +1,4 @@
-import "../Recipes/MyRecipes.scss";
+import "../Recipes/CreateRecipe.scss";
 
 import { Button, Form, Modal } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
