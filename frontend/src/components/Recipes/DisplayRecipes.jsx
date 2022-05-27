@@ -13,6 +13,7 @@ const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
     <div className="postlist">
       {recipeList
         .map((post, index) => {
+          console.log(post);
           return (
             <div key={index} className="postbody">
               <button
@@ -22,7 +23,6 @@ const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
                   setSingleRecipe(post);
                 }}
               >
-                {" "}
                 <div className="name-container">{post.name}</div>
                 <div className="body-container">{post.body}</div>
                 <p className="post"></p>

@@ -4,18 +4,14 @@ import React, { useContext, useEffect, useState } from "react";
 
 import AuthContext from "../../context/AuthContext";
 import AxiosPosts from "../../Routes/postRoutes";
-import DisplayPosts from "../../components/Recipes/DisplayRecipes";
-import DisplaySinglePost from "../../components/Recipes/DisplaySingleRecipe";
+import DisplayRecipes from "../../components/Recipes/DisplayRecipes";
+import DisplaySingleRecipe from "../../components/Recipes/DisplaySingleRecipe";
 import ErrorBoundary from "../../components/ErrorBoundary";
 
 // import CreatePost from "../../components/Recipes/CreateRecipe";
 
-
-
-
 const MyRecipesPage = () => {
   const [recipeList, setRecipeList] = useState([]);
-  const [stepsList, setStepsList] = useState([]);
   const { user } = useContext(AuthContext);
   const userId = user._id || null;
   const [update, setUpdate] = useState(false);
@@ -43,9 +39,8 @@ const MyRecipesPage = () => {
       {hidden === false && (
         <div>
           <ErrorBoundary>
-            <DisplayPosts
+            <DisplayRecipes
               recipeList={recipeList}
-              stepsList={stepsList}
               setHidden={setHidden}
               setSingleRecipe={setSingleRecipe}
             />
@@ -53,7 +48,7 @@ const MyRecipesPage = () => {
         </div>
       )}
       {hidden && (
-        <DisplaySinglePost
+        <DisplaySingleRecipe
           singleRecipe={singleRecipe}
           setHidden={setHidden}
           handleClick={handleClick}
