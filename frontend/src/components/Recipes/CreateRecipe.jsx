@@ -7,8 +7,10 @@ import AuthContext from "../../context/AuthContext";
 import AxiosPosts from "../../Routes/postRoutes";
 import AxiosUsers from "../../Routes/userRoutes";
 
-const CreateRecipe = ({ userId, handleClick, name, steps }) => {
+const CreateRecipe = ({ userId, handleClick, name }) => {
   const [value, setValue] = useState("");
+  const [filter, setFilters] = useState("");
+  const [steps, setSteps] = useState("");
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const [show, setShow] = useState(false);
@@ -21,15 +23,19 @@ const CreateRecipe = ({ userId, handleClick, name, steps }) => {
       userId: userId,
       name: name,
       steps: steps,
+      filter: filter,
     };
     createNewRecipe(newRecipe);
     setValue("");
+    setFilters("");
+    setSteps("");
     let click = () => {
       handleClick();
     };
     click();
   }
   async function createNewRecipe(obj) {
+    console.log(obj);
     await AxiosPosts.updatePosts(obj);
     return obj;
   }
@@ -62,6 +68,30 @@ const CreateRecipe = ({ userId, handleClick, name, steps }) => {
                 type="textArea"
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
+                onKeyUp={(event) => {
+                  if (event.key === "Enter") {
+                    handlePost(event);
+                  }
+                }}
+              />
+              <Form.Control
+                // className="recipetextArea"
+                placeholder="Attributes!"
+                type="textArea"
+                value={filter}
+                onChange={(event) => setFilters(event.target.value)}
+                onKeyUp={(event) => {
+                  if (event.key === "Enter") {
+                    handlePost(event);
+                  }
+                }}
+              />
+              <Form.Control
+                // className="recipetextArea"
+                placeholder="steps!"
+                type="textArea"
+                value={steps}
+                onChange={(event) => setSteps(event.target.value)}
                 onKeyUp={(event) => {
                   if (event.key === "Enter") {
                     handlePost(event);

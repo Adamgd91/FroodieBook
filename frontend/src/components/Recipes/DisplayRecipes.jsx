@@ -26,10 +26,10 @@ const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
                 <div className="name-container">{post.name}</div>
                 <div className="body-container">{post.body}</div>
                 <p className="post"></p>
-                <div className="body-container">{post.step}</div>
+                <div className="body-container">{post.steps}</div>
                 <p className="post">step:</p>
-                <div className="body-container">{post.attributes}</div>
-                <p className="post">Attributes:</p>
+                <div className="body-container">{post.filter}</div>
+                <p className="post">Attribute:</p>
               </button>
 
               {/* <CustomButton post={post} /> */}
