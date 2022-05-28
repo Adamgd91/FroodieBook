@@ -28,11 +28,15 @@ const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
                 <p className="post"></p>
                 <div className="body-container">{post.steps}</div>
                 <p className="post">step:</p>
-                <div className="body-container">{post.styles}</div>
-                <div>{post.timeofday}</div>
-                <div className="body-container">{post.difficulty}</div>
-                <div className="body-container">{post.season}</div>
-                <div className="body-container">{post.timetocook}</div>
+                <div
+                  style={{ display: "flex", justifyContent: "space-evenly" }}
+                >
+                  <div>{post.styles}</div>
+                  <div>{post.timeofday}</div>
+                  <div>{post.difficulty}</div>
+                  <div>{post.season}</div>
+                  <div>{post.timetocook}</div>
+                </div>
               </button>
 
               {/* <CustomButton post={post} /> */}
