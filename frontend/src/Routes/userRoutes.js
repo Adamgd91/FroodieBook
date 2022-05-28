@@ -149,17 +149,19 @@ async function acceptFriendRequests(userId, obj) {
 }
 
 async function updateImage(userId, formData) {
-  console.log(`${baseUrl}/updateImage/${userId}`);
+  console.log(`${baseUrl}/updateImage/${userId}`, formData);
   try {
+    console.log("response 1");
     let response = await axios.put(
       `${baseUrl}/updateImage/${userId}`,
       formData
     );
+    console.log(response, "response 2");
     if (response) {
       return response.data;
     }
   } catch (error) {
-    console.log("Error updating user: " + error);
+    console.log("Error updating user: 1234 " + error);
   }
 }
 

@@ -9,6 +9,7 @@ const postSchema = mongoose.Schema({
   dislikes: { type: Array, default: [] },
   dateAdded: { type: Date, default: Date.now() },
   steps: { type: String, minLength: 2, maxLength: 255 },
+  filter: { type: String, minLength: 2, maxLength: 255, default: "Adam" },
 });
 
 const validatePost = (post) => {

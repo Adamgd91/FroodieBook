@@ -7,8 +7,10 @@ const router = express.Router();
 // http://localhost:3007/api/post
 router.post("/", async (req, res) => {
   try {
-    const { error } = validatePost(req.body);
-    if (error) return res.status(400).send(error);
+    // const { error } = validatePost(req.body);
+    // console.log(error);
+    // if (error) return res.status(400).send(error);
+
     let newPost = await new Post(req.body);
     await newPost.save();
     return res.status(201).send(newPost);

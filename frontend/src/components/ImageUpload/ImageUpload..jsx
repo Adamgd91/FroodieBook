@@ -24,6 +24,7 @@ const ImageUpload = () => {
   async function updateImage(formData) {
     let response = await AxiosUsers.updateImage(user._id, formData);
     if (response) console.log(response);
+    // console.log;
   }
 
   return (
@@ -39,9 +40,9 @@ const ImageUpload = () => {
           name="image"
           onChange={handlePhoto}
         />
-        {/* <div className="bg"> </div> */}
         <input type="submit" />
       </form>
+      {/* <img src={setNewImage} alt="" /> */}
     </div>
   );
 };

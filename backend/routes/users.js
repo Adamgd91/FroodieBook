@@ -129,7 +129,6 @@ router.put(
         { image: req.file.filename },
         { new: true }
       );
-
       return res.status(200).send(users);
     } catch (error) {
       return res.status(500).send(`Internal Server Error: ${error}`);

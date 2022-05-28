@@ -18,6 +18,7 @@ const userSchema = mongoose.Schema({
   pendingFriends: { type: Array, default: [] },
   friendRequests: { type: Array, default: [] },
   dateAdded: { type: Date, default: Date.now() },
+  image: { type: String, default: "" },
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -32,6 +33,7 @@ userSchema.methods.generateAuthToken = function () {
       pendingFriends: this.pendingFriends,
       friendRequests: this.friendRequests,
       dateAdded: this.dateAdded,
+      image: this.image,
     },
     process.env.JWT_SECRET
   );
