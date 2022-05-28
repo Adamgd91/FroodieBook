@@ -34,6 +34,7 @@ async function getAPost(postId) {
 }
 
 async function updatePosts(obj) {
+  console.log(obj);
   try {
     let response = await axios.post("http://localhost:3007/api/posts/", obj);
     if (response) {

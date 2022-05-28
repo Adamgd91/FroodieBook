@@ -9,8 +9,12 @@ import AxiosUsers from "../../Routes/userRoutes";
 
 const CreateRecipe = ({ userId, handleClick, name }) => {
   const [value, setValue] = useState("");
-  const [filter, setFilters] = useState("");
   const [steps, setSteps] = useState("");
+  const [styles, setStyles] = useState("");
+  const [timeofday, setTimeofday] = useState("");
+  const [difficulty, setDifficulty] = useState("");
+  const [season, setSeason] = useState("");
+  const [timetocook, setTimetocook] = useState("");
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const [show, setShow] = useState(false);
@@ -23,12 +27,20 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
       userId: userId,
       name: name,
       steps: steps,
-      filter: filter,
+      styles: styles,
+      timeofday: timeofday,
+      difficulty: difficulty,
+      season: season,
+      timetocook: timetocook,
     };
     createNewRecipe(newRecipe);
     setValue("");
-    setFilters("");
     setSteps("");
+    setStyles("");
+    setTimeofday("");
+    setDifficulty("");
+    setSeason("");
+    setTimetocook("");
     let click = () => {
       handleClick();
     };
@@ -53,6 +65,7 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
         show={show}
         onHide={handleClose}
         className="recipemodal"
+        style={{ width: "40em", height: "25em" }}
         backdrop="static"
       >
         <Modal.Header>
@@ -75,19 +88,7 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                 }}
               />
               <Form.Control
-                // className="recipetextArea"
-                placeholder="Attributes!"
-                type="textArea"
-                value={filter}
-                onChange={(event) => setFilters(event.target.value)}
-                onKeyUp={(event) => {
-                  if (event.key === "Enter") {
-                    handlePost(event);
-                  }
-                }}
-              />
-              <Form.Control
-                // className="recipetextArea"
+                className="recipetextArea"
                 placeholder="steps!"
                 type="textArea"
                 value={steps}
@@ -98,7 +99,95 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                   }
                 }}
               />
-
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <div>
+                  <label>Style of Cooking</label>
+                  <select
+                    name="styles"
+                    id="styles"
+                    value={styles}
+                    onChange={(event) => setStyles(event.target.value)}
+                    onKeyUp={(event) => {
+                      if (event.key === "Enter") {
+                        handlePost(event);
+                      }
+                    }}
+                  >
+                    <option value="American">American</option>
+                    <option value="Mexican">Mexican</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="timeofday">Time Of Day</label>
+                  <select
+                    name="timeofday"
+                    id="timeofday"
+                    value={timeofday}
+                    onChange={(event) => setTimeofday(event.target.value)}
+                    onKeyUp={(event) => {
+                      if (event.key === "Enter") {
+                        handlePost(event);
+                      }
+                    }}
+                  >
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="difficulty">Difficulty</label>
+                  <select
+                    name="difficulty"
+                    id="difficulty"
+                    value={difficulty}
+                    onChange={(event) => setDifficulty(event.target.value)}
+                    onKeyUp={(event) => {
+                      if (event.key === "Enter") {
+                        handlePost(event);
+                      }
+                    }}
+                  >
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                    <option value="Super Hard">Super Hard</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="season">Season</label>
+                  <select
+                    name="season"
+                    id="season"
+                    value={season}
+                    onChange={(event) => setSeason(event.target.value)}
+                    onKeyUp={(event) => {
+                      if (event.key === "Enter") {
+                        handlePost(event);
+                      }
+                    }}
+                  >
+                    <option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Fall">Fall</option>
+                  </select>
+                </div>
+                <div>
+                  <Form.Control
+                    className="recipetextArea"
+                    placeholder="How Much Time to Cook??"
+                    type="text"
+                    value={timetocook}
+                    onChange={(event) => setTimetocook(event.target.value)}
+                    onKeyUp={(event) => {
+                      if (event.key === "Enter") {
+                        handlePost(event);
+                      }
+                    }}
+                  />
+                </div>
+              </div>
               <br />
               <div className="aboutme-form-buttons">
                 <Button
