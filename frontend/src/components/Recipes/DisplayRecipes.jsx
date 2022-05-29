@@ -34,11 +34,13 @@ const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
                 <div
                   style={{ display: "flex", justifyContent: "space-evenly" }}
                 >
-                  <div className="styles-container">{post.styles}</div>
+                  <div className="styles-container">{post.genre}</div>
                   <div className="timeofday-container">{post.timeofday}</div>
                   <div className="difficulty-container">{post.difficulty}</div>
                   <div className="season-container">{post.season}</div>
-                  <div className="timetocook-container">{post.timetocook}</div>
+                  <div className="timetocook-container">
+                    {post.timetocook} mins
+                  </div>
                 </div>
               </button>
 

@@ -10,11 +10,11 @@ import AxiosUsers from "../../Routes/userRoutes";
 const CreateRecipe = ({ userId, handleClick, name }) => {
   const [value, setValue] = useState("");
   const [steps, setSteps] = useState("");
-  const [styles, setStyles] = useState("American");
+  const [genre, setGenre] = useState("American");
   const [timeofday, setTimeofday] = useState("Morning");
   const [difficulty, setDifficulty] = useState("Easy");
   const [season, setSeason] = useState("Winter");
-  const [timetocook, setTimetocook] = useState("");
+  const [timetocook, setTimetocook] = useState("0-10");
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const [show, setShow] = useState(false);
@@ -22,7 +22,7 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
   function restForm() {
     setValue("");
     setSteps("");
-    setStyles("");
+    setGenre("");
     setTimeofday("");
     setDifficulty("");
     setSeason("");
@@ -37,7 +37,7 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
       userId: userId,
       name: name,
       steps: steps,
-      styles: styles,
+      genre: genre,
       timeofday: timeofday,
       difficulty: difficulty,
       season: season,
@@ -56,6 +56,8 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
     return obj;
   }
 
+  const ele = document.getElementById("message");
+
   return (
     <div>
       <div>
@@ -73,7 +75,9 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
         backdrop="static"
       >
         <Modal.Header>
-          <Modal.Title>ADD A RECIPE</Modal.Title>
+          <Modal.Title style={{ display: "flex", justifyContent: "center" }}>
+            ADD A RECIPE
+          </Modal.Title>
         </Modal.Header>
         <Form onSubmit={handlePost}>
           <Form.Group>
@@ -86,8 +90,8 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
                 onKeyUp={(event) => {
-                  if (event.key === "Enter") {
-                    handlePost(event);
+                  if (event.key == 13 && event.shiftKey) {
+                    event.preventDefault();
                   }
                 }}
               />
@@ -98,8 +102,8 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                 value={steps}
                 onChange={(event) => setSteps(event.target.value)}
                 onKeyUp={(event) => {
-                  if (event.key === "Enter") {
-                    handlePost(event);
+                  if (event.key == 13 && event.shiftKey) {
+                    event.preventDefault();
                   }
                 }}
               />
@@ -111,17 +115,12 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                 }}
               >
                 <div>
-                  <label>Style of Cooking</label>
+                  <label htmlFor="genre">Genre of Food</label>
                   <select
-                    name="styles"
-                    id="styles"
-                    value={styles}
-                    onChange={(event) => setStyles(event.target.value)}
-                    onKeyUp={(event) => {
-                      if (event.key === "Enter") {
-                        handlePost(event);
-                      }
-                    }}
+                    name="genre"
+                    id="genre"
+                    value={genre}
+                    onChange={(event) => setGenre(event.target.value)}
                   >
                     <option value="American">American</option>
                     <option value="Mexican">Mexican</option>
@@ -138,15 +137,11 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                     id="timeofday"
                     value={timeofday}
                     onChange={(event) => setTimeofday(event.target.value)}
-                    onKeyUp={(event) => {
-                      if (event.key === "Enter") {
-                        handlePost(event);
-                      }
-                    }}
                   >
-                    <option value="Morning">Morning</option>
-                    <option value="Afternoon">Afternoon</option>
-                    <option value="Evening">Evening</option>
+                    <option value="Morning">Breakfast</option>
+                    <option value="Afternoon">Lunch</option>
+                    <option value="Evening">Dinner</option>
+                    <option value="Snack">Snack</option>
                   </select>
                 </div>
                 <div>
@@ -156,11 +151,6 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                     id="difficulty"
                     value={difficulty}
                     onChange={(event) => setDifficulty(event.target.value)}
-                    onKeyUp={(event) => {
-                      if (event.key === "Enter") {
-                        handlePost(event);
-                      }
-                    }}
                   >
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
@@ -175,11 +165,6 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                     id="season"
                     value={season}
                     onChange={(event) => setSeason(event.target.value)}
-                    onKeyUp={(event) => {
-                      if (event.key === "Enter") {
-                        handlePost(event);
-                      }
-                    }}
                   >
                     <option value="Winter">Winter</option>
                     <option value="Spring">Spring</option>
@@ -188,18 +173,21 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                   </select>
                 </div>
                 <div>
-                  <Form.Control
-                    className="timetocooktextArea"
-                    placeholder="Estimate Time"
-                    type="text"
+                  <label htmlFor="timetocook">Time To Cook(mins)</label>
+                  <select
+                    name="timetocook"
+                    id="timetocook"
                     value={timetocook}
                     onChange={(event) => setTimetocook(event.target.value)}
-                    onKeyUp={(event) => {
-                      if (event.key === "Enter") {
-                        handlePost(event);
-                      }
-                    }}
-                  />
+                  >
+                    <option value="0-10">0-10</option>
+                    <option value="10-20">10-20</option>
+                    <option value="20-30">20-30</option>
+                    <option value="30-40">30-40</option>
+                    <option value="40-50">40-50</option>
+                    <option value="50-60">50-60</option>
+                    <option value="60+">60+</option>
+                  </select>
                 </div>
               </div>
               <br />
