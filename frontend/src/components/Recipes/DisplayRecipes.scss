@@ -47,6 +47,11 @@
 .body-container {
   text-align: left;
   margin-top: 0;
+  font-weight: bold;
+}
+.steps-container {
+  text-align: left;
+  margin-top: 0;
 }
 
 .post {
@@ -56,4 +61,44 @@
   font-size: 0.75rem;
   margin-bottom: 0;
   padding-left: 0;
+}
+
+.styles-container {
+  background: rgba(41, 118, 153, 0.509);
+  padding: 0.75em;
+  border-radius: 25px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.timeofday-container {
+  background: rgba(255, 255, 0, 0.516);
+  padding: 0.75em;
+  border-radius: 25px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.difficulty-container {
+  background: rgba(255, 0, 0, 0.483);
+  padding: 0.75em;
+  border-radius: 25px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.season-container {
+  background: rgba(179, 60, 179, 0.45);
+  padding: 0.75em;
+  border-radius: 25px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.timetocook-container {
+  background: rgba(92, 192, 92, 0.485);
+  padding: 0.75em;
+  border-radius: 25px;
+  font-size: 0.85em;
+  font-weight: bold;
 }
