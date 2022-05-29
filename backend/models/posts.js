@@ -9,7 +9,11 @@ const postSchema = mongoose.Schema({
   dislikes: { type: Array, default: [] },
   dateAdded: { type: Date, default: Date.now() },
   steps: { type: String, minLength: 2, maxLength: 255 },
-  filter: { type: String, minLength: 2, maxLength: 255, default: "Adam" },
+  styles: { type: String, minLength: 2, maxLength: 255 },
+  timeofday: { type: String, minLength: 2, maxLength: 255 },
+  difficulty: { type: String, minLength: 2, maxLength: 255 },
+  season: { type: String, minLength: 2, maxLength: 255 },
+  timetocook: { type: String, minLength: 2, maxLength: 255 },
 });
 
 const validatePost = (post) => {
