@@ -9,7 +9,7 @@ const postSchema = mongoose.Schema({
   dislikes: { type: Array, default: [] },
   dateAdded: { type: Date, default: Date.now() },
   steps: { type: String, minLength: 2, maxLength: 255 },
-  styles: { type: String, minLength: 2, maxLength: 255 },
+  genre: { type: String, minLength: 2, maxLength: 255 },
   timeofday: { type: String, minLength: 2, maxLength: 255 },
   difficulty: { type: String, minLength: 2, maxLength: 255 },
   season: { type: String, minLength: 2, maxLength: 255 },
