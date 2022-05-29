@@ -1,14 +1,31 @@
 import "../Recipes/DisplayRecipes.scss";
 
+import { useContext, useEffect, useState } from "react";
+
+import AuthContext from "../../context/AuthContext";
 import CustomButton from "./LikeButton";
-import React from "react";
-import { useState } from "react";
+import ImageUpload from "../ImageUpload/ImageUpload.";
+import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 
 const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
+  const { user } = useContext(AuthContext);
+  const [photo, setPhoto] = useState();
+  const [photAlt, setPhotoAlt] = useState();
   function handleClick() {
     setHidden(true);
   }
 
+  //   useEffect(() => {
+  //     if (user.image !== "") {
+  //       setPhoto(`http://localhost:3007/uploads/images/${user.image}`);
+  //       setPhotoAlt(user.name);
+  //     } else {
+  //       setPhoto(
+  //         "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png"
+  //       );
+  //       setPhotoAlt("Default Image Placeholder");
+  //     }
+  //   }, [user]);
   return (
     <div className="postlist">
       {recipeList
@@ -16,6 +33,29 @@ const DisplayRecipes = ({ recipeList, setHidden, setSingleRecipe }) => {
           console.log(post);
           return (
             <div key={index} className="postbody">
+              {/* <section>
+                {!user || !user.image ? (
+                  <ImageUpload />
+                ) : (
+                  <div className="big-profile-img">
+                    <img
+                      onClick={<ProfilePage />}
+                      src={photo}
+                      alt={photAlt}
+                      style={{
+                        marginLeft: "auto",
+                        marginRight: "1em",
+                        width: "100px",
+                        height: "100px",
+                        borderRadius: "50%",
+                        position: "absolute",
+                        cursor: "pointer",
+                        // top: "0",
+                      }}
+                    />
+                  </div>
+                )}
+              </section> */}
               <button
                 className="my-post-button"
                 onClick={() => {

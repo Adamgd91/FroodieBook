@@ -1,15 +1,30 @@
 import "./NavBar.scss";
 
 import { Link, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 
 import AuthContext from "../../context/AuthContext";
 import ImageUpload from "../ImageUpload/ImageUpload.";
 import React from "react";
-import { useContext } from "react";
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [photo, setPhoto] = useState();
+  const [photAlt, setPhotoAlt] = useState();
+
+  useEffect(() => {
+    if (user.image !== "") {
+      setPhoto(`http://localhost:3007/uploads/images/${user.image}`);
+      setPhotoAlt(user.name);
+      console.log(setPhoto);
+    } else {
+      setPhoto(
+        "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png"
+      );
+      setPhotoAlt("Default Image Placeholder");
+    }
+  }, [user]);
   return (
     <div className="navs">
       <div className="navBar">
@@ -22,10 +37,26 @@ const Navbar = () => {
             </li>
           </ul>
           <section>
-            <ImageUpload />
+            {!user || !user.image ? (
+              <ImageUpload />
+            ) : (
+              <div className="big-profile-img">
+                <img
+                  src={photo}
+                  alt={photAlt}
+                  style={{
+                    marginLeft: "auto",
+                    width: "100px",
+                    height: "100px",
+                    borderRadius: "50%",
+                  }}
+                />
+              </div>
+            )}
           </section>
           <section>{user.name}</section>
         </div>
+
         <div className="user-container test">
           <ul className="navbar-nav-links">
             <li>
