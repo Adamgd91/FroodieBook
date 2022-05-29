@@ -10,14 +10,24 @@ import AxiosUsers from "../../Routes/userRoutes";
 const CreateRecipe = ({ userId, handleClick, name }) => {
   const [value, setValue] = useState("");
   const [steps, setSteps] = useState("");
-  const [styles, setStyles] = useState("");
-  const [timeofday, setTimeofday] = useState("");
-  const [difficulty, setDifficulty] = useState("");
-  const [season, setSeason] = useState("");
+  const [styles, setStyles] = useState("American");
+  const [timeofday, setTimeofday] = useState("Morning");
+  const [difficulty, setDifficulty] = useState("Easy");
+  const [season, setSeason] = useState("Winter");
   const [timetocook, setTimetocook] = useState("");
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const [show, setShow] = useState(false);
+
+  function restForm() {
+    setValue("");
+    setSteps("");
+    setStyles("");
+    setTimeofday("");
+    setDifficulty("");
+    setSeason("");
+    setTimetocook("");
+  }
 
   function handlePost(event) {
     event.preventDefault();
@@ -34,13 +44,7 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
       timetocook: timetocook,
     };
     createNewRecipe(newRecipe);
-    setValue("");
-    setSteps("");
-    setStyles("");
-    setTimeofday("");
-    setDifficulty("");
-    setSeason("");
-    setTimetocook("");
+    restForm();
     let click = () => {
       handleClick();
     };
@@ -65,7 +69,7 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
         show={show}
         onHide={handleClose}
         className="recipemodal"
-        style={{ width: "40em", height: "25em" }}
+        style={{ width: "50em", height: "25em" }}
         backdrop="static"
       >
         <Modal.Header>
@@ -99,7 +103,13 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                   }
                 }}
               />
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "1em",
+                }}
+              >
                 <div>
                   <label>Style of Cooking</label>
                   <select
@@ -115,6 +125,10 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                   >
                     <option value="American">American</option>
                     <option value="Mexican">Mexican</option>
+                    <option value="Asian">Asian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="European">European</option>
+                    <option value="Thai">Thai</option>
                   </select>
                 </div>
                 <div>
@@ -175,8 +189,8 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
                 </div>
                 <div>
                   <Form.Control
-                    className="recipetextArea"
-                    placeholder="How Much Time to Cook??"
+                    className="timetocooktextArea"
+                    placeholder="Estimate Time"
                     type="text"
                     value={timetocook}
                     onChange={(event) => setTimetocook(event.target.value)}

@@ -45,7 +45,7 @@ const HomePage = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          alignContent: "center",
+          textAlign: "center",
         }}
       >
         <h1>
