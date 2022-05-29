@@ -79,10 +79,7 @@ const Navbar = () => {
         <div className="logout-container test">
           {" "}
           {user ? (
-            <button
-              className="logoutbuttons"
-              onClick={({ logoutUser }) => navigate("/login")}
-            >
+            <button className="logoutbuttons" onClick={logoutUser}>
               Logout
             </button>
           ) : (
