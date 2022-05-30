@@ -1,9 +1,38 @@
 import "./Favorites.scss";
 
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 
-const FavoritesPage = () => {
-  return <div className="favorites-container">FavoritesPage</div>;
+import DisplayRecipes from "../../components/Recipes/DisplayRecipes";
+import ErrorBoundary from "../../components/ErrorBoundary";
+import Favorites from "../../components/Favorites/Favorites";
+
+const FavoritesPage = ({
+  recipeList,
+  setHidden,
+  //   MyFavoritesComponent,
+  handleFavoritesClick,
+}) => {
+  const [favorites, setFavorites] = useState([]);
+
+  const addFavoriteRecipe = (recipeList) => {
+    const newFavoriteList = [...favorites, recipeList];
+    setFavorites(newFavoriteList);
+  };
+  //   const FavoritesComponent = { MyFavoritesComponent };
+  return (
+    <div className="favorites-container">
+      {" "}
+      <ErrorBoundary>
+        <DisplayRecipes
+          recipeList={recipeList}
+          handleFavoritesClick={addFavoriteRecipe}
+          setHidden={setHidden}
+          //   MyFavoritesComponent={Favorites}
+        />
+      </ErrorBoundary>
+      {/* <DisplayRecipes /> */}
+    </div>
+  );
 };
 
 export default FavoritesPage;

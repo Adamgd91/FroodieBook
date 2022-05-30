@@ -84,7 +84,7 @@ const Navbar = () => {
         <div className="friends-container test">
           {" "}
           <ul className="navbar-nav-links">
-            <li>
+            {/* <li>
               <Link to="/friendspage" className="nav-links">
                 <p>Friends</p>
               </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
               <Link to="/friendspage" className="nav-links">
                 <p>Friends Request</p>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/foodgeneratorpage" className="nav-links">
                 <p>Food Generator</p>

@@ -6,7 +6,7 @@ import CreateRecipe from "../../components/Recipes/CreateRecipe";
 import DisplayRecipes from "../../components/Recipes/DisplayRecipes";
 import DisplaySingleRecipe from "../../components/Recipes/DisplaySingleRecipe";
 import ErrorBoundary from "../../components/ErrorBoundary";
-import Navbar from "../../components/NavBar/NavBar";
+import Favorites from "../../components/Favorites/Favorites";
 
 const HomePage = () => {
   const [recipeList, setRecipeList] = useState([]);
@@ -16,7 +16,7 @@ const HomePage = () => {
   const [hidden, setHidden] = useState(false);
   const [singleRecipe, setSingleRecipe] = useState();
   const name = user.name || null;
-
+  const [favorites, setFavorites] = useState([]);
   useEffect(() => {
     getAllPosts();
   }, [update]);
@@ -31,7 +31,10 @@ const HomePage = () => {
       setRecipeList(post);
     } else setRecipeList({ Object: "No Posts" });
   }
-
+  const addFavoriteRecipe = (post) => {
+    const newFavoriteList = [...favorites, post];
+    setFavorites(newFavoriteList);
+  };
   return (
     <div
       className="homepage-container"
@@ -63,6 +66,8 @@ const HomePage = () => {
               recipeList={recipeList}
               setHidden={setHidden}
               setSingleRecipe={setSingleRecipe}
+              handleFavoritesClick={addFavoriteRecipe}
+              // avoritesComponent={Favorites}
             />
           </ErrorBoundary>
         </div>

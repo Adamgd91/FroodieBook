@@ -51,7 +51,6 @@ const CreateRecipe = ({ userId, handleClick, name }) => {
     click();
   }
   async function createNewRecipe(obj) {
-    console.log(obj);
     await AxiosPosts.updatePosts(obj);
     return obj;
   }
