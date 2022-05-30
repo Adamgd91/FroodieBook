@@ -24,7 +24,6 @@ const ImageUpload = () => {
   async function updateImage(formData) {
     let response = await AxiosUsers.updateImage(user._id, formData);
     if (response) console.log(response);
-    // console.log;
   }
 
   return (
