@@ -52,6 +52,43 @@
   margin-bottom: 1em;
   text-align: left;
   text-transform: uppercase;
+  z-index: 99;
+  width: fit-content;
+  padding-bottom: -1em;
+  li {
+    list-style-type: none;
+    text-decoration: none;
+    color: $secondaryColor;
+  }
+}
+
+.visit-profile {
+  // border: 1px solid black;
+  font-size: .5em;
+  text-align: left;
+  color: black;
+
+}
+
+.user-links {
+  text-decoration: none;
+  color: $secondaryColor;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.name-container:hover{
+  background: $primaryColor;
+  cursor: pointer;
+  border-radius: 12px;
+  padding-left: .75em;
+  padding-right: .75em;
+  color: $secondaryColor;
+  font-weight: bold;
+  .visit-profile{
+    display: none;
+  }
+  
 }
 
 .body-container {
