@@ -1,7 +1,7 @@
 import "../Recipes/DisplayRecipes.scss";
 
 import { useContext, useEffect, useState } from "react";
-
+import { Link, Navigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import CustomButton from "./LikeButton";
 import Favorites from "../../components/Favorites/Favorites";
@@ -76,6 +76,7 @@ const DisplayRecipes = ({
                   <Favorites />
                 </span>
               </div>
+              
               <button
                 className="my-post-button"
                 onClick={() => {
@@ -83,7 +84,10 @@ const DisplayRecipes = ({
                   setSingleRecipe(post);
                 }}
               >
-                <div className="name-container">{post.name}</div>
+                <ul className="name-container" >
+              <li><Link to="/favoritespage" className="user-links">{post.name} <br /><span className="visit-profile">(Click name to visit Profile)</span></Link>
+                </li></ul>
+                {/* <span className="visit-profile">(Click name visit Profile)</span> */}
                 <div className="body-container">{post.body}</div>
                 <p className="post"></p>
                 <div className="steps-container">
