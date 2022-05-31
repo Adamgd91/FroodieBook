@@ -85,8 +85,10 @@
   padding-right: .75em;
   color: $secondaryColor;
   font-weight: bold;
+  transition: 1s;
   .visit-profile{
     display: none;
+    transition: 1s;
   }
   
 }

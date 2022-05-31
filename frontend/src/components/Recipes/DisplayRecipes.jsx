@@ -85,7 +85,7 @@ const DisplayRecipes = ({
                 }}
               >
                 <ul className="name-container" >
-              <li><Link to="/favoritespage" className="user-links">{post.name} <br /><span className="visit-profile">(Click name to visit Profile)</span></Link>
+              <li><Link to="/froodieuserpage" className="user-links">{post.name} <br /><span className="visit-profile">(Click name to visit Profile)</span></Link>
                 </li></ul>
                 {/* <span className="visit-profile">(Click name visit Profile)</span> */}
                 <div className="body-container">{post.body}</div>

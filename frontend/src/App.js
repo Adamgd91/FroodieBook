@@ -13,6 +13,7 @@ import MyRecipePage from "./pages/MyRecipesPage/MyRecipesPage";
 import PrivateRoute from "./utils/PrivateRoute";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import FroodieUserPage from "./pages/FroodieUserPage/FroodieUserPage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/favoritespage" element={<FavoritesPage />} />
           <Route path="/foodgeneratorpage" element={<FoodGeneratorPage />} />
           <Route path="/friendspage" element={<FriendsPage />} />
+          <Route path="/froodieuserpage" element={<FroodieUserPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
