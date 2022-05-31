@@ -6,9 +6,9 @@ import React, { useContext, useEffect, useState } from "react";
 import AboutMe from "../../components/AboutMe/AboutMe";
 import AuthContext from "../../context/AuthContext";
 
-const ProfilePage = (props) => {
+const ProfilePage = ({ selectedUser }) => {
   const { user } = useContext(AuthContext);
-
+  console.log(selectedUser);
   return (
     <div className="profile-container">
       <h1 className="profile-name">Profile for {user.name}</h1>
