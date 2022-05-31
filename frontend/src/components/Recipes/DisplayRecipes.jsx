@@ -1,7 +1,8 @@
 import "../Recipes/DisplayRecipes.scss";
 
-import { useContext, useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+
 import AuthContext from "../../context/AuthContext";
 import CustomButton from "./LikeButton";
 import Favorites from "../../components/Favorites/Favorites";
@@ -40,8 +41,8 @@ const DisplayRecipes = ({
     <div className="postlist">
       {recipeList
         .map((post, index) => {
-          console.log(post);
-          console.log(recipeList);
+          //   console.log(post);
+          //   console.log(recipeList);
           return (
             <div key={index} className="postbody">
               <div className="sidebar">
@@ -76,7 +77,7 @@ const DisplayRecipes = ({
                   <Favorites />
                 </span>
               </div>
-              
+
               <button
                 className="my-post-button"
                 onClick={() => {
@@ -84,9 +85,16 @@ const DisplayRecipes = ({
                   setSingleRecipe(post);
                 }}
               >
-                <ul className="name-container" >
-              <li><Link to="/froodieuserpage" className="user-links">{post.name} <br /><span className="visit-profile">(Click name to visit Profile)</span></Link>
-                </li></ul>
+                <ul className="name-container">
+                  <li>
+                    <Link to="/froodieuserpage" className="user-links">
+                      {post.name} <br />
+                      <span className="visit-profile">
+                        (Click name to visit Profile)
+                      </span>
+                    </Link>
+                  </li>
+                </ul>
                 {/* <span className="visit-profile">(Click name visit Profile)</span> */}
                 <div className="body-container">{post.body}</div>
                 <p className="post"></p>
