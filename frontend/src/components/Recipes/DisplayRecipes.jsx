@@ -17,7 +17,9 @@ const DisplayRecipes = ({
   setSingleRecipe,
   //   MyFavoritesComponent,
   handleFavoritesClick,
+  selectedUser,
 }) => {
+  //   let selectedUser = "";
   const { user } = useContext(AuthContext);
   const [photo, setPhoto] = useState();
   const [photAlt, setPhotoAlt] = useState();
@@ -41,8 +43,9 @@ const DisplayRecipes = ({
     <div className="postlist">
       {recipeList
         .map((post, index) => {
-          //   console.log(post);
+          //   console.log(post, "post");
           //   console.log(recipeList);
+          //   console.log(user);
           return (
             <div key={index} className="postbody">
               <div className="sidebar">
@@ -65,10 +68,10 @@ const DisplayRecipes = ({
                           cursor: "pointer",
                           // top: "0",
                         }}
-                      />
+                      />{" "}
                     </div>
-                  )}
-                </section>
+                  )}{" "}
+                </section>{" "}
                 {/* <button onClick={() => handleFavoritesClick(post)}>
                 <Favorites />
               </button> */}
@@ -87,8 +90,17 @@ const DisplayRecipes = ({
               >
                 <ul className="name-container">
                   <li>
-                    <Link to="/froodieuserpage" className="user-links">
+                    <Link
+                      onClick={() => {
+                        selectedUser = post.userId;
+                      }}
+                      to={{
+                        pathname: `/froodieuserpage/${post.userId}`,
+                      }}
+                      className="user-links"
+                    >
                       {post.name} <br />
+                      {/* {post.aboutMe} */}
                       <span className="visit-profile">
                         (Click name to visit Profile)
                       </span>

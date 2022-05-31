@@ -2,10 +2,12 @@ import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
 
+import AboutMe from "./components/AboutMe/AboutMe";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import FoodGeneratorPage from "./pages/FoodGeneratorPage/FoodGeneratorPage";
 import FriendsPage from "./pages/FriendsPage/FriendsPage";
+import FroodieUserPage from "./pages/FroodieUserPage/FroodieUserPage";
 import HomePage from "./pages/HomePage/HomePage";
 import Layout from "./Layout";
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -13,7 +15,6 @@ import MyRecipePage from "./pages/MyRecipesPage/MyRecipesPage";
 import PrivateRoute from "./utils/PrivateRoute";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import FroodieUserPage from "./pages/FroodieUserPage/FroodieUserPage";
 
 function App() {
   return (
@@ -36,7 +37,10 @@ function App() {
           <Route path="/favoritespage" element={<FavoritesPage />} />
           <Route path="/foodgeneratorpage" element={<FoodGeneratorPage />} />
           <Route path="/friendspage" element={<FriendsPage />} />
-          <Route path="/froodieuserpage" element={<FroodieUserPage />} />
+          <Route
+            path="/froodieuserpage/:userId"
+            element={<FroodieUserPage />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

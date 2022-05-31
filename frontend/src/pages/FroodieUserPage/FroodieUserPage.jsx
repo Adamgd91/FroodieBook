@@ -1,9 +1,18 @@
-import React from 'react'
+import FroodiesPage from "../../components/FroodiesPage/FroodiesPage";
+import React from "react";
 
 const FroodieUserPage = () => {
   return (
-    <div>FroodieUserPage</div>
-  )
-}
+    <div
+      style={{
+        display: "grid",
+        marginLeft: "40em",
+        position: "relative",
+      }}
+    >
+      <FroodiesPage />
+    </div>
+  );
+};
 
-export default FroodieUserPage
+export default FroodieUserPage;
