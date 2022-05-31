@@ -2,7 +2,6 @@ import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
 
-import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import FoodGeneratorPage from "./pages/FoodGeneratorPage/FoodGeneratorPage";
@@ -36,7 +35,6 @@ function App() {
           <Route path="/favoritespage" element={<FavoritesPage />} />
           <Route path="/foodgeneratorpage" element={<FoodGeneratorPage />} />
           <Route path="/friendspage" element={<FriendsPage />} />
-          <Route path="/addrecipepage" element={<AddRecipePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

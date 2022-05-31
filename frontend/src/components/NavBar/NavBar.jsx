@@ -44,12 +44,7 @@ const Navbar = () => {
                 <img
                   src={photo}
                   alt={photAlt}
-                  style={{
-                    marginLeft: "auto",
-                    width: "100px",
-                    height: "100px",
-                    borderRadius: "50%",
-                  }}
+                  style={{ marginLeft: "5em", width: "100px", height: "100px" }}
                 />
               </div>
             )}
