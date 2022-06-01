@@ -12,7 +12,7 @@ const FroodiesPage = () => {
   const [aboutMe, setAboutMe] = useState();
   const [name, setName] = useState();
 
-  console.log(userId);
+  //   console.log(userId);
   async function getUser(userId) {
     const user = await AxiosUsers.getUser(userId);
     return user;

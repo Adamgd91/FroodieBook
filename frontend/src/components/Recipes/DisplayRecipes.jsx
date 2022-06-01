@@ -28,17 +28,17 @@ const DisplayRecipes = ({
     setHidden(true);
   }
 
-  //   useEffect(() => {
-  //     if (user.image !== "") {
-  //       setPhoto(`http://localhost:3007/uploads/images/${user.image}`);
-  //       setPhotoAlt(user.name);
-  //     } else {
-  //       setPhoto(
-  //         "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png"
-  //       );
-  //       setPhotoAlt("Default Image Placeholder");
-  //     }
-  //   }, [user]);
+  useEffect(() => {
+    if (user.image !== "") {
+      setPhoto(`http://localhost:3007/uploads/images/${user.image}`);
+      setPhotoAlt(user.name);
+    } else {
+      setPhoto(
+        "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png"
+      );
+      setPhotoAlt("Default Image Placeholder");
+    }
+  }, [user]);
   return (
     <div className="postlist">
       {recipeList
