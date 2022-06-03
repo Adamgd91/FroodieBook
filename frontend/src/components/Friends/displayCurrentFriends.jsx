@@ -1,5 +1,6 @@
 import "../Friends/friends.css";
 
+import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import React, { useContext, useEffect, useState } from "react";
 
 import AuthContext from "../../context/AuthContext";
@@ -13,7 +14,7 @@ const DisplayCurrentFriends = ({
 }) => {
   const [friendObjList, setFriendObjList] = useState([]);
   const [checkedFriends, setCheckedFriends] = useState(false);
-  const [arrow, setArrow] = useState("arrow_downward");
+  const [arrow, setArrow] = useState(<AiOutlineArrowDown />);
   const { user } = useContext(AuthContext);
 
   async function removeFriend(userId, obj) {
@@ -46,10 +47,10 @@ const DisplayCurrentFriends = ({
     }
   }
   function handleArrow() {
-    if (arrow === "arrow_upward") {
-      setArrow("arrow_downward");
-    } else if (arrow === "arrow_downward") {
-      setArrow("arrow_upward");
+    if (arrow === <AiOutlineArrowUp />) {
+      setArrow(<AiOutlineArrowDown />);
+    } else if (arrow === <AiOutlineArrowDown />) {
+      setArrow(<AiOutlineArrowUp />);
     }
   }
   function refreshPage() {
@@ -77,22 +78,7 @@ const DisplayCurrentFriends = ({
                 <div key={index} className="friendBody">
                   <div>
                     <div className="friendButtons">
-                      <button
-                        className="my-friend-button"
-                        onClick={() => {
-                          handleClick(friend._id);
-                          setSingleUser(friend._id);
-                        }}
-                      >
-                        {" "}
-                        <div className="friendName-container">
-                          {friend.name}
-                        </div>
-                        {/* <p className="post">About:</p>
-                <div className="name-container">{friend.aboutMe}</div>
-                <p className="post">Stance:</p>
-                <div className="name-container">{friend.stance}</div> */}
-                      </button>{" "}
+                      <div className="name-container">{friend.name}</div>
                       <button
                         onClick={() => {
                           //logged in user "userId"

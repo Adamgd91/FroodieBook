@@ -84,7 +84,7 @@ const Navbar = () => {
                 <p>Friends</p>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/friendspage" className="nav-links">
                 <p>Pending Friends</p>
               </Link>
@@ -93,7 +93,7 @@ const Navbar = () => {
               <Link to="/friendspage" className="nav-links">
                 <p>Friends Request</p>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/foodgeneratorpage" className="nav-links">
                 <p>Food Generator</p>

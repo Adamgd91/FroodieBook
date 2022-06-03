@@ -2,6 +2,7 @@ import "../Friends/friends.css";
 
 import React, { useState } from "react";
 
+import { AiOutlineArrowDown } from "react-icons/ai";
 import AxiosUsers from "../../Routes/userRoutes";
 
 const DisplaySentFriendRequests = ({
@@ -11,7 +12,7 @@ const DisplaySentFriendRequests = ({
 }) => {
   const [friendObjList, setFriendObjList] = useState([]);
   const [usersFriend, setUsersFriend] = useState("");
-  const [arrow, setArrow] = useState("arrow_downward");
+  const [arrow, setArrow] = useState(<AiOutlineArrowDown />);
   const [checkedUsers, setCheckedUsers] = useState(false);
   function handleClick() {
     setHidden(true);

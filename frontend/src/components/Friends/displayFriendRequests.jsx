@@ -1,5 +1,7 @@
 import "../Friends/friends.css";
 
+import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
+
 import AxiosUsers from "../../Routes/userRoutes";
 import React from "react";
 import { useState } from "react";
@@ -12,7 +14,7 @@ const DisplayFriendRequests = ({
   setUsersFriendRequest,
   userId,
 }) => {
-  const [arrow, setArrow] = useState("arrow_downward");
+  const [arrow, setArrow] = useState(<AiOutlineArrowDown />);
   const [checkedUsers, setCheckedUsers] = useState(false);
   const [friendObjList, setFriendObjList] = useState([]);
   async function acceptFriendRequest(userId, obj) {
@@ -51,10 +53,10 @@ const DisplayFriendRequests = ({
     }
   }
   function handleArrow() {
-    if (arrow === "arrow_upward") {
-      setArrow("arrow_downward");
-    } else if (arrow === "arrow_downward") {
-      setArrow("arrow_upward");
+    if (arrow === <AiOutlineArrowUp />) {
+      setArrow(<AiOutlineArrowDown />);
+    } else if (arrow === <AiOutlineArrowDown />) {
+      setArrow(<AiOutlineArrowUp />);
     }
   }
   function refreshPage() {

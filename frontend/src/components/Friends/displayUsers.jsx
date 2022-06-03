@@ -1,5 +1,6 @@
 import "../Friends/friends.css";
 
+import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import React, { useState } from "react";
 import { useContext, useEffect } from "react";
 
@@ -18,7 +19,7 @@ const DisplayUsers = ({
 }) => {
   const { user } = useContext(AuthContext);
   const [updatedUsers, setUpdatedUsers] = useState([]);
-  const [arrow, setArrow] = useState("arrow_downward");
+  const [arrow, setArrow] = useState(<AiOutlineArrowDown />);
   const [checkedUsers, setCheckedUsers] = useState(false);
 
   let allLists = [userId];
@@ -61,10 +62,10 @@ const DisplayUsers = ({
     }
   }
   function handleArrow() {
-    if (arrow === "arrow_upward") {
-      setArrow("arrow_downward");
-    } else if (arrow === "arrow_downward") {
-      setArrow("arrow_upward");
+    if (arrow === <AiOutlineArrowUp />) {
+      setArrow(<AiOutlineArrowDown />);
+    } else if (arrow === <AiOutlineArrowDown />) {
+      setArrow(<AiOutlineArrowUp />);
     }
   }
   function refreshPage() {
@@ -100,6 +101,12 @@ const DisplayUsers = ({
                   > */}
                   <div className="friendBody">
                     {" "}
+                    <div
+                      className="name-container"
+                      style={{ fontSize: ".75em" }}
+                    >
+                      {user.name}
+                    </div>
                     <div className="nameAndButton">
                       <button
                         onClick={() => {
@@ -118,10 +125,7 @@ const DisplayUsers = ({
                       >
                         Send Request
                       </button>{" "}
-                      <div className="name-container">{user.name}</div>
                     </div>
-                    <p className="titles">About:</p>
-                    <div className="name-container">{user.aboutMe}</div>
                   </div>
                 </div>
               );
