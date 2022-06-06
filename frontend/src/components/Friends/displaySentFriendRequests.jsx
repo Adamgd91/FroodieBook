@@ -1,4 +1,4 @@
-import "../Friends/friends.css";
+import "../Friends/friends.scss";
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -60,8 +60,9 @@ const DisplaySentFriendRequests = ({
   return (
     <div className="friendList">
       <div className="friendListHead">
-        <div>Pending Friends</div>
+        <div style={{marginRight: "1em"}}>Pending Friends</div>
         <button
+        className="friends-buttons"
           onClick={() => {
             convertFriendsListToObjects(userSentFriendRequestList);
             handleCheckedUsers();
@@ -100,7 +101,7 @@ const DisplaySentFriendRequests = ({
                     </Link>
                     </div>
                    
-                    <div >{user.aboutMe}</div>
+                   
                   </div>
                 </div>
               );

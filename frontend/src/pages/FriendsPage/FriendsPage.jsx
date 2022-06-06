@@ -9,7 +9,7 @@ import DisplaySingleUser from "../../components/Friends/displaySingleUser";
 import DisplayUsers from "../../components/Friends/displayUsers";
 import ErrorBoundary from "../../components/ErrorBoundary";
 
-import("../../components/Friends/friends.css");
+import("../../components/Friends/friends.scss");
 const FriendsPage = () => {
   const { user } = useContext(AuthContext);
   const userId = user._id || null;

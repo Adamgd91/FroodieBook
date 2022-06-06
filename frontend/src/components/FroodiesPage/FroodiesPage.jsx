@@ -28,8 +28,9 @@ const FroodiesPage = () => {
 
   return (
     <div className="froodielist">
-      <div>{name}</div>
-      <div>{aboutMe}</div>
+      <div><h1>{name}</h1></div>
+      <h3 className="aboutme">About Me:</h3>
+      <div className="froodie-aboutme">{aboutMe}</div>
     </div>
   );
 };

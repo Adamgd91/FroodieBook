@@ -1,4 +1,4 @@
-import "../Friends/friends.css";
+import "../Friends/friends.scss";
 
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import React, { useState } from "react";
@@ -30,13 +30,13 @@ const DisplayUsers = ({
 
   async function sendFriendRequest(userId, obj) {
     await AxiosUsers.updateUsersFriendRequests(userId, obj);
-    console.log(userId);
-    console.log(obj);
+    // console.log(userId);
+    // console.log(obj);
   }
   async function addToPendingFriends(userId, obj) {
     await AxiosUsers.addToPendingFriends(userId, obj);
-    console.log(userId);
-    console.log(obj);
+    // console.log(userId);
+    // console.log(obj);
   }
 
   async function filterUsers(users) {
@@ -76,8 +76,9 @@ const DisplayUsers = ({
   return (
     <div className="friendList">
       <div className="friendListHead">
-        <div>Add Friends</div>
+        <div style={{marginRight: "1em"}}>Add Friends</div>
         <button
+        className="friends-buttons"
           onClick={() => {
             filterUsers(userList);
             handleCheckedUsers();

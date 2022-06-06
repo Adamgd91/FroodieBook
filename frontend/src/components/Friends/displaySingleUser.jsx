@@ -1,4 +1,4 @@
-import "../Friends/friends.css";
+import "../Friends/friends.scss";
 
 import AxiosUsers from "../../Routes/userRoutes";
 import React from "react";

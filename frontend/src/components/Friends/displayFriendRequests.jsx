@@ -1,7 +1,7 @@
-import "../Friends/friends.css";
+import "../Friends/friends.scss";
 
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
-
+import { Link } from "react-router-dom";
 import AxiosUsers from "../../Routes/userRoutes";
 import React from "react";
 import { useState } from "react";
@@ -13,6 +13,7 @@ const DisplayFriendRequests = ({
   usersFriendRequest,
   setUsersFriendRequest,
   userId,
+  selectedUser,
 }) => {
   const [arrow, setArrow] = useState(<AiOutlineArrowDown />);
   const [checkedUsers, setCheckedUsers] = useState(false);
@@ -65,8 +66,9 @@ const DisplayFriendRequests = ({
   return (
     <div className="friendList">
       <div className="friendListHead">
-        <div>Friend Requests</div>
+        <div style={{marginRight: "1em"}}>Friend Requests</div>
         <button
+        className="friends-buttons"
           onClick={() => {
             convertFriendsListToObjects(userFriendRequestList);
             handleCheckedUsers();
@@ -91,6 +93,17 @@ const DisplayFriendRequests = ({
                   >
                     {" "}
                     <div className="nameAndButton">
+                    <div className="name-container">
+                      <Link
+                      onClick={() => {
+                        selectedUser = theUser._id;
+                      }}
+                      to={{
+                        pathname: `/froodieuserpage/${theUser._id}`,
+                      }}
+                      className="user-links"
+                    >{theUser.name}
+                    </Link></div>
                       <button
                         onClick={() => {
                           // the user logged in "userId"
@@ -113,10 +126,9 @@ const DisplayFriendRequests = ({
                         Accept Friend Request
                       </button>
 
-                      <div className="name-container">{theUser.name}</div>
+           
                     </div>
-                    <p className="titles">About:</p>
-                    <div className="name-container">{theUser.aboutMe}</div>
+  
                   </button>
                 </div>
               );

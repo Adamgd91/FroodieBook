@@ -1,7 +1,8 @@
-import "../Friends/friends.css";
+import "../Friends/friends.scss";
 
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import AuthContext from "../../context/AuthContext";
 import AxiosUsers from "../../Routes/userRoutes";
@@ -60,8 +61,9 @@ const DisplayCurrentFriends = ({
   return (
     <div className="friendList">
       <div className="friendListHead">
-        <div>Your Friends</div>
+        <div style={{marginRight: "1em"}}>Your Friends</div>
         <button
+        className="friends-buttons"
           onClick={() => {
             convertFriendsListToObjects(userFriendsList);
             handleCheckedFriends();
@@ -79,7 +81,17 @@ const DisplayCurrentFriends = ({
                 <div key={index} className="friendBody">
                   <div>
                     <div className="friendButtons">
-                      <div className="name-container">{friend.name}</div>
+                      <div className="name-container">
+                        <Link
+                      onClick={() => {
+                        selectedUser = friend._id;
+                      }}
+                      to={{
+                        pathname: `/froodieuserpage/${friend._id}`,
+                      }}
+                      className="user-links"
+                    >{friend.name}
+                    </Link></div>
                       <button
                         onClick={() => {
                           //logged in user "userId"
