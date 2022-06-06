@@ -1,10 +1,9 @@
 import "../Friends/friends.scss";
 
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import AuthContext from "../../context/AuthContext";
 import AxiosUsers from "../../Routes/userRoutes";
 
 const DisplayCurrentFriends = ({
@@ -17,15 +16,12 @@ const DisplayCurrentFriends = ({
   const [friendObjList, setFriendObjList] = useState([]);
   const [checkedFriends, setCheckedFriends] = useState(false);
   const [arrow, setArrow] = useState(<AiOutlineArrowDown />);
-  const { user } = useContext(AuthContext);
+
 
   async function removeFriend(userId, obj) {
     await AxiosUsers.removeFriend(userId, obj);
   }
 
-  function handleClick() {
-    setHidden(true);
-  }
 
   async function getFriendById(user) {
     let friend = await AxiosUsers.getUser(user);

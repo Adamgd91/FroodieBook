@@ -16,9 +16,9 @@ const DisplaySentFriendRequests = ({
   const [usersFriend, setUsersFriend] = useState("");
   const [arrow, setArrow] = useState(<AiOutlineArrowDown />);
   const [checkedUsers, setCheckedUsers] = useState(false);
-  function handleClick() {
-    setHidden(true);
-  }
+  // function handleClick() {
+  //   setHidden(true);
+  // }
 
   async function getFriendById(user) {
     let friend = await AxiosUsers.getUser(user);
@@ -78,13 +78,6 @@ const DisplaySentFriendRequests = ({
             .map((user, index) => {
               return (
                 <div key={index} className="friendBody">
-                  {/* <button
-                className="my-friend-button"
-                onClick={() => {
-                  handleClick(user);
-                  setSingleUser(user);
-                }}
-              > */}
 
                   <div className="friendBody">
                     {" "}
