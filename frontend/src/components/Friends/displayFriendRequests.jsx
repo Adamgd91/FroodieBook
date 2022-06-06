@@ -75,7 +75,7 @@ const DisplayFriendRequests = ({
             handleArrow();
           }}
         >
-          <span className="material-symbols-outlined">{arrow}</span>
+          {arrow}
         </button>
       </div>
       {checkedUsers && (
@@ -84,16 +84,7 @@ const DisplayFriendRequests = ({
             .map((theUser, index) => {
               return (
                 <div key={index} className="friendBody">
-                  <button
-                    className="my-friend-button"
-                    onClick={() => {
-                      handleClick(theUser);
-                      setSingleUser(theUser);
-                    }}
-                  >
-                    {" "}
-                    <div className="nameAndButton">
-                    <div className="name-container">
+                   <div className="name-container">
                       <Link
                       onClick={() => {
                         selectedUser = theUser._id;
@@ -104,6 +95,16 @@ const DisplayFriendRequests = ({
                       className="user-links"
                     >{theUser.name}
                     </Link></div>
+                  <button
+                    className="my-friend-button"
+                    onClick={() => {
+                      handleClick(theUser);
+                      setSingleUser(theUser);
+                    }}
+                  >
+                    {" "}
+                    <div className="nameAndButton">
+                   
                       <button
                         onClick={() => {
                           // the user logged in "userId"
