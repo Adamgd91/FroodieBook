@@ -3,7 +3,7 @@
 .friendList {
   display: flex;
   flex-direction: column;
-  border: 1px saddlebrown solid;
+  // border: 1px saddlebrown solid;
   border-radius: 12px;
   width: 50%;
   height: 100%;
@@ -24,14 +24,14 @@
   /* margin-right: .5em; */
   /* align-items: center; */
   margin-top: 2rem;
-  color: black;
+  // color: black;
 }
 .friendBody {
   width: 90%;
   /* background: black; */
   margin-bottom: 1rem;
   margin-top: .5rem;
-  border: 1px solid black;
+  // border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,16 +72,6 @@
   min-height: 100vh;
 }
 
-.friendCheckIn {
-  color: white;
-}
-.friendStatus {
-  display: flex;
-  align-items: stretch;
-}
-#friendSkateButton {
-  cursor: default;
-}
 .postListFriends {
   display: flex;
   border: 1px black solid;
@@ -108,34 +98,7 @@
   height: 25px;
   justify-content: space-between;
 }
-.allReviewsList {
-  display: flex;
-  width: 100vw;
-  flex-direction: column;
-  border-radius: 7px;
-  height: auto;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.allReviewsBody {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: row;
-}
-.all-reviews-button {
-  background-color: white;
-  border: none;
-  color: steelblue;
-  font-size: 1rem;
-  font-family: inherit;
-  /* border: 1px solid #4b6cd5d6; */
-  width: 90vw;
-  border-radius: 15px;
-  margin: 1rem;
-}
+
 .nameAndButton {
   display: flex;
   flex-direction: row-reverse;
@@ -144,7 +107,7 @@
 }
 .addFriendButtonLink {
   width: 100%;
-  background: black;
+  // background: black;
 }
 .titles {
   color: white;
@@ -154,6 +117,7 @@
 .friends-buttons {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .friends-buttons:hover {
