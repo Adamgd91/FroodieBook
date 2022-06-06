@@ -64,7 +64,7 @@ const FriendsPage = () => {
   return (
     <div>
       {hidden === false && (
-        <div className="friendsFullPage">
+        <div>
           <ErrorBoundary>
             <DisplayCurrentFriends
               userFriendsList={userFriendsList}

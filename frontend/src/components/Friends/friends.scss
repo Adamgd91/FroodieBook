@@ -3,60 +3,31 @@
 .friendList {
   display: flex;
   flex-direction: column;
-  // border: 1px saddlebrown solid;
   border-radius: 12px;
   width: 50%;
   height: 100%;
-  /* margin: auto; */
-  /* justify-content: center; */
   align-items: center;
   margin-bottom: 1rem;
   margin-left: 40em;
 }
 .friendListHead {
   display: flex;
-  /* flex-direction: column; */
-  /* border: 1px black solid; */
-  /* flex-direction: row; */
-  /* width: 100px; */
-  /* border: 1px black solid; */
   justify-content: center;
-  /* margin-right: .5em; */
-  /* align-items: center; */
   margin-top: 2rem;
-  // color: black;
+
 }
 .friendBody {
   width: 90%;
-  /* background: black; */
   margin-bottom: 1rem;
   margin-top: .5rem;
-  // border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* .friendName-container {
-    background-color: #212529;
-    border: 3px double black;
-    color: #c4c8d8;
-    font-size: 1rem;
-    font-family: inherit;
-    width: 100%;
-    margin-bottom: 0.5rem;
-    border-radius: 10px;
-  } */
-
 .button {
   cursor: pointer;
-}
-
-.friendsFullPage {
-  /* background: url("../../../../backend/uploads/camila-waz-EN1ovuYpOZQ-unsplash.jpg"); */
-  background-size: cover;
-  min-height: 100vh;
 }
 
 .postListFriends {
@@ -98,11 +69,6 @@
 }
 .addFriendButtonLink {
   width: 100%;
-  // background: black;
-}
-.titles {
-  color: white;
-  margin: 0;
 }
 
 .friends-buttons {
