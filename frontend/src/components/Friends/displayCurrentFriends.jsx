@@ -11,6 +11,7 @@ const DisplayCurrentFriends = ({
   setHidden,
   setSingleUser,
   userId,
+  selectedUser,
 }) => {
   const [friendObjList, setFriendObjList] = useState([]);
   const [checkedFriends, setCheckedFriends] = useState(false);

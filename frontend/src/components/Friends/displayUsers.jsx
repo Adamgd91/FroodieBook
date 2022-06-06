@@ -3,7 +3,7 @@ import "../Friends/friends.css";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import React, { useState } from "react";
 import { useContext, useEffect } from "react";
-
+import { Link, Navigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import AxiosUsers from "../../Routes/userRoutes";
 
@@ -16,6 +16,7 @@ const DisplayUsers = ({
   userFriendRequestList,
   userSentFriendRequestList,
   userFriendsList,
+  selectedUser
 }) => {
   const { user } = useContext(AuthContext);
   const [updatedUsers, setUpdatedUsers] = useState([]);
@@ -88,9 +89,11 @@ const DisplayUsers = ({
       </div>
       {checkedUsers && (
         <div className="friendMapList">
+   
           {updatedUsers
             .map((user, index) => {
               return (
+                
                 <div key={index} className="friendBody">
                   {/* <button
                     className="addFriendButtonLink"
@@ -105,7 +108,16 @@ const DisplayUsers = ({
                       className="name-container"
                       style={{ fontSize: ".75em" }}
                     >
-                      {user.name}
+                       <Link
+                      onClick={() => {
+                        selectedUser = user._id;
+                      }}
+                      to={{
+                        pathname: `/froodieuserpage/${user._id}`,
+                      }}
+                      className="user-links"
+                    >{user.name}</Link>
+                      
                     </div>
                     <div className="nameAndButton">
                       <button

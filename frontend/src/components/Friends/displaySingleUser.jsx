@@ -11,7 +11,7 @@ const DisplaySingleUser = ({ singleUser, setHidden }) => {
   function sendFriendRequest() {}
 
   return (
-    <div className="delete-post">
+    <div className="delete-pos">
       Name: {singleUser.name} <br />
       Stance: {singleUser.stance} <br />
       <button

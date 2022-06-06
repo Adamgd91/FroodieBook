@@ -1,6 +1,7 @@
 import "../Friends/friends.css";
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { AiOutlineArrowDown } from "react-icons/ai";
 import AxiosUsers from "../../Routes/userRoutes";
@@ -9,6 +10,7 @@ const DisplaySentFriendRequests = ({
   userSentFriendRequestList,
   setHidden,
   setSingleUser,
+  selectedUser,
 }) => {
   const [friendObjList, setFriendObjList] = useState([]);
   const [usersFriend, setUsersFriend] = useState("");
@@ -85,9 +87,20 @@ const DisplaySentFriendRequests = ({
 
                   <div className="friendBody">
                     {" "}
-                    <div className="name-container">{user.name}</div>
-                    <p className="titles">About:</p>
-                    <div className="name-container">{user.aboutMe}</div>
+                    <div className="name-container">
+                      <Link
+                      onClick={() => {
+                        selectedUser = user._id;
+                      }}
+                      to={{
+                        pathname: `/froodieuserpage/${user._id}`,
+                      }}
+                      className="user-links"
+                    >{user.name}
+                    </Link>
+                    </div>
+                   
+                    <div >{user.aboutMe}</div>
                   </div>
                 </div>
               );

@@ -18,7 +18,7 @@ const FroodiesPage = () => {
     return user;
   }
   getUser(userId).then((user) => {
-    console.log(user);
+    // console.log(user);
     setAboutMe(user.aboutMe);
     setName(user.name);
   });
