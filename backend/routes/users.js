@@ -151,6 +151,89 @@ router.put("/friendRequests/:userId", async (req, res) => {
     return res.status(500).send(`Internal Server Error: ${error}`);
   }
 });
+/// Get current friends of user
+router.get("/currentFriends/:userId", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.userId);
+    if (user) {
+      return res.send(user.friendsList);
+    } else {
+      return res.status(400).send("Error getting friends");
+    }
+  } catch (error) {
+    return res.status(500).send(`Internal Server Error: ${error}`);
+  }
+});
+// Get friend requests of user
+router.get("/friendRequests/:userId", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.userId);
+    if (user) {
+      return res.send(user.friendRequests);
+    } else {
+      return res.status(400).send("Error getting friends");
+    }
+  } catch (error) {
+    return res.status(500).send(`Internal Server Error: ${error}`);
+  }
+});
+// Get sent friend requests of user
+router.get("/sentFriendRequests/:userId", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.userId);
+    if (user) {
+      return res.send(user.pendingFriends);
+    } else {
+      return res.status(400).send("Error getting friends");
+    }
+  } catch (error) {
+    return res.status(500).send(`Internal Server Error: ${error}`);
+  }
+});
+// Get user by userId
+router.get("/:userId", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.userId);
+    if (user) {
+      return res.send(user);
+    } else {
+      return res.status(400).send("Error getting user");
+    }
+  } catch (error) {
+    return res.status(500).send(`Internal Server Error: ${error}`);
+  }
+});
+
+// Update property of user
+router.put("/update", async (req, res) => {
+  try {
+    const users = await User.findByIdAndUpdate(
+      { _id: req.body.id },
+      req.body.body,
+      { new: true }
+    );
+
+    return res.status(200).send(users);
+  } catch (error) {
+    return res.status(500).send(`Internal Server Error: ${error}`);
+  }
+});
+
+// Add user to friendRequest list of a chosen user
+// http://localhost:3007/api/users/friendRequests/:userId
+router.put("/friendRequests/:userId", async (req, res) => {
+  try {
+    const user = await User.updateOne(
+      { _id: req.params.userId },
+      { $addToSet: { friendRequests: req.body.friendRequests } },
+      { new: true }
+    );
+    if (!user) return res.status(400).send(`No user to show!`);
+    return res.send(user.friendRequests);
+  } catch (error) {
+    return res.status(500).send(`Internal Server Error: ${error}`);
+  }
+});
 // after sending friend request, add the new pending friend into the pendingFriends list
 // http://localhost:3007/api/users/addToPendingFriends/:userId
 router.put("/addToPendingFriends/:userId", async (req, res) => {
@@ -226,5 +309,4 @@ router.put("/acceptFriendRequests/:userId", async (req, res) => {
     return res.status(500).send(`Internal Server Error: ${error}`);
   }
 });
-
 module.exports = router;
