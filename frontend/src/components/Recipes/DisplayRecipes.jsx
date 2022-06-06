@@ -43,13 +43,10 @@ const DisplayRecipes = ({
     <div className="postlist">
       {recipeList
         .map((post, index) => {
-          //   console.log(post, "post");
-          //   console.log(recipeList);
-          //   console.log(user);
           return (
             <div key={index} className="postbody">
               <div className="sidebar">
-                <section>
+                {/* <section>
                   {!user || !user.image ? (
                     <ImageUpload />
                   ) : (
@@ -71,7 +68,7 @@ const DisplayRecipes = ({
                       />{" "}
                     </div>
                   )}{" "}
-                </section>{" "}
+                </section>{" "} */}
                 {/* <button onClick={() => handleFavoritesClick(post)}>
                 <Favorites />
               </button> */}
