@@ -20,7 +20,7 @@ const FavoritesPage = ({
   };
   //   const FavoritesComponent = { MyFavoritesComponent };
   return (
-    <div className="favorites-container"> hi
+    <div className="favorites-container">
       {" "}
       <ErrorBoundary>
         <DisplayRecipes
