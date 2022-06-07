@@ -22,9 +22,9 @@ async function getPosts(userId) {
   }
 }
 
-async function getAPost(postId) {
+async function getAPost(_id) {
   try {
-    let response = await axios.get("http://localhost:3007/api/posts/" + postId);
+    let response = await axios.get("http://localhost:3007/api/posts/" + _id);
     if (response) {
       return response.data;
     }

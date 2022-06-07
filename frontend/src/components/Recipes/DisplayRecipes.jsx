@@ -43,6 +43,8 @@ const DisplayRecipes = ({
     <div className="postlist">
       {recipeList
         .map((post, index) => {
+          console.log(post._id)
+          console.log(post)
           return (
             <div key={index} className="postbody">
               <div className="sidebar">
